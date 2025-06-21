@@ -66,22 +66,6 @@
       margin-bottom: 40px;
     }
 
-    .btn {
-      background-color: #d4af37;
-      color: black;
-      border: none;
-      padding: 15px 35px;
-      margin: 10px;
-      font-size: 18px;
-      cursor: pointer;
-      border-radius: 10px;
-      transition: background-color 0.3s ease;
-    }
-
-    .btn:hover {
-      background-color: #b9942d;
-    }
-
     .social {
       margin-top: 40px;
       font-size: 20px;
@@ -113,8 +97,7 @@
       color: #d4af37;
     }
 
-    section#about p,
-    section#tokenomics p {
+    section p {
       font-size: 20px;
       color: #ccc;
       max-width: 700px;
@@ -147,91 +130,145 @@
       text-align: left;
     }
 
+    ul {
+      list-style-type: disc;
+      margin-left: 20px;
+      color: #ccc;
+      font-size: 18px;
+    }
+
+    .disclaimer {
+      margin-top: 80px;
+      font-size: 12px;
+      color: #777;
+      text-align: center;
+      padding: 0 20px 40px;
+    }
   </style>
 </head>
 <body>
-  <!-- 🔹 Header Navigation -->
   <header>
     <nav>
       <a href="#about">About</a>
       <a href="Whitepaper.pdf" target="_blank">Whitepaper</a>
       <a href="https://t.me/BNKX_Community" target="_blank">Telegram</a>
       <a href="https://twitter.com/BNKX_Official" target="_blank">Twitter</a>
+      <a href="#faq">FAQ</a>
       <span class="pill">Coming Soon on PinkSale</span>
     </nav>
   </header>
 
-  <!-- 🔸 Main Content -->
   <div class="container">
-    <img src="logo.png" alt="BNKX Logo">
+    <img src="bnkx-logo.png" alt="BNKX Official Logo">
     <h1>BNKX is Reaching New Heights</h1>
     <p>The future of digital finance begins here. Affordable, accessible, and ambitious – just like you.</p>
-    <div>
-      <button class="btn" onclick="window.open('Whitepaper.pdf', '_blank')">View Whitepaper</button>
-      <button class="btn">Coming Soon on PinkSale</button>
-      <button class="btn" onclick="window.location.href='faq.html'">View FAQ</button>
-    </div>
 
-    <!-- 🔹 About Section -->
     <section id="about">
       <h2>About BNKX</h2>
-      <p>
-        BNKX is a bold and visionary meme token born on the Binance Smart Chain.
+      <p>BNKX is a bold and visionary meme token born on the Binance Smart Chain.
         Built for a new generation of digital finance believers, BNKX combines scarcity,
         community, and simplicity. With a total supply of 600 million tokens, fair launch
         mechanics, and a golden standard in transparency, BNKX aims to reach the peak of
-        meme-utility and investor confidence.
-      </p>
+        meme-utility and investor confidence.</p>
     </section>
 
-    <!-- 🔸 Tokenomics Section -->
-    <section id="tokenomics" style="margin-top: 80px;">
+    <section id="tokenomics">
       <h2>Tokenomics</h2>
-      <p>
-        The BNKX Token is designed with fairness, liquidity, and growth in mind.
-        A total of 600 million tokens have been allocated as follows:
-      </p>
-
+      <p>The BNKX Token is designed with fairness, liquidity, and growth in mind.
+         A total of 600 million tokens have been allocated as follows:</p>
       <table>
         <thead>
-          <tr>
-            <th>Category</th>
-            <th>Amount</th>
-            <th>Percentage</th>
-          </tr>
+          <tr><th>Category</th><th>Amount</th><th>Percentage</th></tr>
         </thead>
         <tbody>
-          <tr>
-            <td>Presale</td>
-            <td>300,000,000</td>
-            <td>50%</td>
-          </tr>
-          <tr>
-            <td>Liquidity (LP)</td>
-            <td>180,000,000</td>
-            <td>30%</td>
-          </tr>
-          <tr>
-            <td>Marketing</td>
-            <td>60,000,000</td>
-            <td>10%</td>
-          </tr>
-          <tr>
-            <td>Team & Reserves</td>
-            <td>60,000,000</td>
-            <td>10%</td>
-          </tr>
+          <tr><td>Presale</td><td>300,000,000</td><td>50%</td></tr>
+          <tr><td>Liquidity (LP)</td><td>180,000,000</td><td>30%</td></tr>
+          <tr><td>Marketing</td><td>60,000,000</td><td>10%</td></tr>
+          <tr><td>Team & Reserves</td><td>60,000,000</td><td>10%</td></tr>
         </tbody>
       </table>
-
       <img src="tokenomics-chart.png" alt="Tokenomics Chart" style="max-width: 400px; width: 100%; margin-bottom: 40px;">
     </section>
 
-    <!-- 🔸 Social Footer -->
+    <section id="roadmap">
+      <h2>Roadmap</h2>
+      <p>Our journey is just beginning. Here's a glimpse of what's ahead for BNKX.</p>
+      <div style="text-align: left;">
+        <div style="margin-bottom: 30px;">
+          <h3 style="color: #d4af37;">Q2 2025</h3>
+          <ul>
+            <li>Project launch and branding</li>
+            <li>Website & social media presence</li>
+            <li>Smart contract deployment and verification</li>
+          </ul>
+        </div>
+        <div style="margin-bottom: 30px;">
+          <h3 style="color: #d4af37;">Q3–Q4 2025</h3>
+          <ul>
+            <li>Public presale via PinkSale</li>
+            <li>Marketing campaigns and partnerships</li>
+            <li>Community growth initiatives</li>
+          </ul>
+        </div>
+        <div style="margin-bottom: 30px;">
+          <h3 style="color: #d4af37;">Q4 2025 – Q1 2026</h3>
+          <ul>
+            <li>Token listing on PancakeSwap</li>
+            <li>Liquidity lock and tracking</li>
+            <li>Staking plans and long-term roadmap</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq">
+      <h2>Frequently Asked Questions (FAQ)</h2>
+      <div style="text-align: left;">
+        <div style="margin-bottom: 25px;">
+          <strong style="color: #d4af37;">What is BNKX?</strong>
+          <p>BNKX is a meme token built on Binance Smart Chain (BEP-20) designed to combine meme culture, fair tokenomics, and financial opportunity.</p>
+        </div>
+        <div style="margin-bottom: 25px;">
+          <strong style="color: #d4af37;">Is BNKX audited?</strong>
+          <p>The smart contract is verified on BscScan, and audit steps are being planned before listing.</p>
+        </div>
+        <div style="margin-bottom: 25px;">
+          <strong style="color: #d4af37;">When will BNKX launch on PinkSale?</strong>
+          <p>The presale is scheduled as TBA – follow our Telegram and Twitter for updates.</p>
+        </div>
+        <div style="margin-bottom: 25px;">
+          <strong style="color: #d4af37;">Which wallet do I need to participate?</strong>
+          <p>You need a wallet that supports BSC and BEP-20 tokens like MetaMask or Trust Wallet.</p>
+        </div>
+        <div style="margin-bottom: 25px;">
+          <strong style="color: #d4af37;">How to buy BNKX in the presale?</strong>
+          <p>Once live, the PinkSale page will allow you to connect your wallet and purchase using USDT (BEP-20).</p>
+        </div>
+      </div>
+    </section>
+
     <div class="social">
       <a href="https://twitter.com/BNKX_Official" target="_blank">@BNKX_Official</a>
-      <p style="margin-top: 30px; font-size: 18px;">📧 Official Contact: <a href="mailto:bnkx@bnkx.net" style="color:#d4af37;">bnkx@bnkx.net</a></p>
+      <p style="margin-top: 30px; font-size: 18px;">
+        📧 Official Contact: <a href="mailto:bnkx@bnkx.net" style="color:#d4af37;">bnkx@bnkx.net</a>
+      </p>
+    </div>
+
+    <div class="disclaimer">
+      BNKX is a community-driven token created for experimental and educational purposes. This website and its content are provided for informational purposes only and do not constitute financial, investment, or legal advice. Participation in BNKX is entirely voluntary and at your own risk. Always conduct your own research (DYOR) before engaging in any cryptocurrency-related activity. BNKX does not guarantee any specific outcomes or profits.
     </div>
   </div>
+
+  <footer style="background-color: #111; color: #777; padding: 30px 20px; margin-top: 80px; font-size: 14px; text-align: center;">
+    <div style="margin-bottom: 10px;">
+      <a href="https://bnkx.net" style="color: #d4af37; text-decoration: none; margin: 0 10px;">Website</a>
+      <a href="https://twitter.com/BNKX_Official" target="_blank" style="color: #d4af37; text-decoration: none; margin: 0 10px;">Twitter</a>
+      <a href="https://t.me/BNKX_Community" target="_blank" style="color: #d4af37; text-decoration: none; margin: 0 10px;">Telegram</a>
+      <a href="mailto:bnkx@bnkx.net" style="color: #d4af37; text-decoration: none; margin: 0 10px;">Email</a>
+    </div>
+    <div style="margin-top: 10px;">
+      &copy; 2025 BNKX. All rights reserved. Built for the future of decentralized finance.
+    </div>
+  </footer>
 </body>
 </html>
