@@ -103,22 +103,50 @@
       border-radius: 6px;
     }
 
-    section#about {
-      margin-top: 80px;
+    section {
       padding: 0 20px;
     }
 
-    section#about h2 {
+    section h2 {
       font-size: 32px;
       margin-bottom: 20px;
+      color: #d4af37;
     }
 
-    section#about p {
+    section#about p,
+    section#tokenomics p {
       font-size: 20px;
       color: #ccc;
       max-width: 700px;
       margin: 0 auto 40px;
     }
+
+    table {
+      margin: 0 auto 40px;
+      color: #d4af37;
+      font-size: 18px;
+      border-collapse: collapse;
+      width: 100%;
+      max-width: 700px;
+    }
+
+    table th, table td {
+      padding: 12px 20px;
+    }
+
+    table th {
+      text-align: left;
+      border-bottom: 1px solid #d4af37;
+    }
+
+    table td {
+      text-align: right;
+    }
+
+    table td:first-child {
+      text-align: left;
+    }
+
   </style>
 </head>
 <body>
@@ -156,6 +184,49 @@
       </p>
     </section>
 
+    <!-- 🔸 Tokenomics Section -->
+    <section id="tokenomics" style="margin-top: 80px;">
+      <h2>Tokenomics</h2>
+      <p>
+        The BNKX Token is designed with fairness, liquidity, and growth in mind.
+        A total of 600 million tokens have been allocated as follows:
+      </p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Category</th>
+            <th>Amount</th>
+            <th>Percentage</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Presale</td>
+            <td>300,000,000</td>
+            <td>50%</td>
+          </tr>
+          <tr>
+            <td>Liquidity (LP)</td>
+            <td>180,000,000</td>
+            <td>30%</td>
+          </tr>
+          <tr>
+            <td>Marketing</td>
+            <td>60,000,000</td>
+            <td>10%</td>
+          </tr>
+          <tr>
+            <td>Team & Reserves</td>
+            <td>60,000,000</td>
+            <td>10%</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <img src="tokenomics-chart.png" alt="Tokenomics Chart" style="max-width: 400px; width: 100%; margin-bottom: 40px;">
+    </section>
+
     <!-- 🔸 Social Footer -->
     <div class="social">
       <a href="https://twitter.com/BNKX_Official" target="_blank">@BNKX_Official</a>
@@ -164,4 +235,3 @@
   </div>
 </body>
 </html>
-
