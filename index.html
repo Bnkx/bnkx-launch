@@ -115,19 +115,21 @@
 
     table th, table td {
       padding: 12px 20px;
+      border: 1px solid #d4af37;
     }
 
     table th {
+      background-color: #111;
       text-align: left;
-      border-bottom: 1px solid #d4af37;
     }
 
-    table td {
-      text-align: right;
+    table td a {
+      color: #d4af37;
+      text-decoration: none;
     }
 
-    table td:first-child {
-      text-align: left;
+    table td a:hover {
+      text-decoration: underline;
     }
 
     ul {
@@ -143,19 +145,6 @@
       color: #777;
       text-align: center;
       padding: 0 20px 40px;
-    }
-
-    #team .member {
-      margin-bottom: 30px;
-    }
-
-    #team a {
-      color: #d4af37;
-      text-decoration: none;
-    }
-
-    #team a:hover {
-      text-decoration: underline;
     }
   </style>
 </head>
@@ -286,35 +275,25 @@
 
     <section id="team">
       <h2>Our Team</h2>
-      <div style="text-align:left; max-width:700px; margin:0 auto; font-size:18px; color:#ccc;">
-        <div class="member"><strong style="color:#d4af37;">Alex Knight</strong> – Founder & CEO<br>
-          <a href="mailto:Founder@bnkx.net">Founder@bnkx.net</a><br>
-          <a href="https://x.com/Founder_Bnkx" target="_blank">https://x.com/Founder_Bnkx</a></div>
-
-        <div class="member"><strong style="color:#d4af37;">Emma Brooks</strong> – Marketing Lead<br>
-          <a href="mailto:Marketing@bnkx.net">Marketing@bnkx.net</a><br>
-          <a href="https://x.com/EmmaLead13696" target="_blank">https://x.com/EmmaLead13696</a></div>
-
-        <div class="member"><strong style="color:#d4af37;">Kevin Smith</strong> – Blockchain Developer<br>
-          <a href="mailto:Blockchain@bnkx.net">Blockchain@bnkx.net</a><br>
-          <a href="https://x.com/DeveloperK19270" target="_blank">https://x.com/DeveloperK19270</a></div>
-
-        <div class="member"><strong style="color:#d4af37;">Sarah Lee</strong> – Community Manager<br>
-          <a href="mailto:Community@bnkx.net">Community@bnkx.net</a><br>
-          <a href="https://x.com/manager87989" target="_blank">https://x.com/manager87989</a></div>
-
-        <div class="member"><strong style="color:#d4af37;">David Stone</strong> – Smart Contract Auditor<br>
-          <a href="mailto:Smart@bnkx.net">Smart@bnkx.net</a><br>
-          <a href="https://x.com/StoneAudit73752" target="_blank">https://x.com/StoneAudit73752</a></div>
-
-        <div class="member"><strong style="color:#d4af37;">Lisa Moon</strong> – Graphic Designer<br>
-          <a href="mailto:Graphic@bnkx.net">Graphic@bnkx.net</a><br>
-          <a href="https://x.com/designer52534" target="_blank">https://x.com/designer52534</a></div>
-
-        <div class="member"><strong style="color:#d4af37;">John Carter</strong> – Partnerships Manager<br>
-          <a href="mailto:Partnerships@bnkx.net">Partnerships@bnkx.net</a><br>
-          <a href="https://x.com/manager95632" target="_blank">https://x.com/manager95632</a></div>
-      </div>
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Role</th>
+            <th>Email</th>
+            <th>Profile Link</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Alex Knight</td><td>Founder & CEO</td><td><a href="mailto:Founder@bnkx.net">Founder@bnkx.net</a></td><td><a href="https://x.com/Founder_Bnkx" target="_blank">Profile</a></td></tr>
+          <tr><td>Emma Brooks</td><td>Marketing Lead</td><td><a href="mailto:Marketing@bnkx.net">Marketing@bnkx.net</a></td><td><a href="https://x.com/EmmaLead13696" target="_blank">Profile</a></td></tr>
+          <tr><td>Kevin Smith</td><td>Blockchain Developer</td><td><a href="mailto:Blockchain@bnkx.net">Blockchain@bnkx.net</a></td><td><a href="https://x.com/DeveloperK19270" target="_blank">Profile</a></td></tr>
+          <tr><td>Sarah Lee</td><td>Community Manager</td><td><a href="mailto:Community@bnkx.net">Community@bnkx.net</a></td><td><a href="https://x.com/manager87989" target="_blank">Profile</a></td></tr>
+          <tr><td>David Stone</td><td>Smart Contract Auditor</td><td><a href="mailto:Smart@bnkx.net">Smart@bnkx.net</a></td><td><a href="https://x.com/StoneAudit73752" target="_blank">Profile</a></td></tr>
+          <tr><td>Lisa Moon</td><td>Graphic Designer</td><td><a href="mailto:Graphic@bnkx.net">Graphic@bnkx.net</a></td><td><a href="https://x.com/designer52534" target="_blank">Profile</a></td></tr>
+          <tr><td>John Carter</td><td>Partnerships Manager</td><td><a href="mailto:Partnerships@bnkx.net">Partnerships@bnkx.net</a></td><td><a href="https://x.com/manager95632" target="_blank">Profile</a></td></tr>
+        </tbody>
+      </table>
     </section>
 
     <div class="social">
