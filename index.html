@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>BNKX Launch</title>
   <style>
+    html, body {
+      height: 100%;
+    }
     body {
       margin: 0;
       padding: 0;
@@ -39,6 +42,9 @@
     .container {
       max-width: 700px;
       margin: 120px auto 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
       padding: 0 20px;
     }
     img {
@@ -55,11 +61,36 @@
       font-size: 20px;
       margin-bottom: 40px;
     }
+    .social {
+      margin-top: 40px;
+      font-size: 20px;
+    }
+    .social a {
+      color: #d4af37;
+      text-decoration: none;
+    }
+    .social a:hover {
+      text-decoration: underline;
+    }
     .pill {
       background-color: #d4af37;
       color: black;
       padding: 5px 10px;
       border-radius: 6px;
+    }
+    section {
+      padding: 0 20px;
+    }
+    section h2 {
+      font-size: 32px;
+      margin-bottom: 20px;
+      color: #d4af37;
+    }
+    section p {
+      font-size: 20px;
+      color: #ccc;
+      max-width: 700px;
+      margin: 0 auto 40px;
     }
     table {
       margin: 0 auto 40px;
@@ -89,7 +120,6 @@
       margin-left: 20px;
       color: #ccc;
       font-size: 18px;
-      text-align: left;
     }
     .disclaimer {
       margin-top: 80px;
@@ -115,91 +145,51 @@
   </header>
 
   <div class="container">
-    <img src="logo.png" alt="BNKX Official Logo">
-    <h1>BNKX is Reaching New Heights</h1>
-    <p>The future of digital finance begins here. Affordable, accessible, and ambitious – just like you.</p>
-
-    <!-- 🟡 Countdown Box -->
-    <div style="margin-top: 20px;">
-      <div id="countdown-box" style="
-        background-color: #1a1a1a;
-        border-radius: 15px;
-        padding: 30px 40px;
-        box-shadow: 0 0 25px #d4af37;
+    <!-- COUNTDOWN COMPONENT HERE -->
+    <div id="countdown-box" style="
+      background-color: #1a1a1a;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 0 20px #d4af37;
+      margin-bottom: 60px;
+      max-width: 400px;
+      width: 100%;
+    ">
+      <h2 style="color: #d4af37; margin-bottom: 10px;">⏳ BNKX Presale Countdown</h2>
+      <p style="color: #ccc; font-size: 18px;">Presale starts in:</p>
+      <div id="countdown" style="font-size: 28px; font-weight: bold; margin: 20px 0;">Loading...</div>
+      <a href="https://www.pinksale.finance/launchpad/0xfd73cCF13F1DAaFb807FAdf03Cef21ef06aC8f63?chain=BSC" target="_blank" style="
+        background-color: #d4af37;
+        color: black;
+        padding: 12px 24px;
+        border-radius: 8px;
+        font-weight: bold;
+        font-size: 16px;
+        text-decoration: none;
         display: inline-block;
-        margin: 40px auto;
-      ">
-        <h2 style="color: #d4af37; font-size: 24px; margin-bottom: 10px;">⏳ BNKX Presale Countdown</h2>
-        <p style="color: #ccc; font-size: 18px;" id="countdown-label">Presale starts in:</p>
-        <p id="countdown" style="font-size: 26px; font-weight: bold; color: #d4af37;"></p>
-        <a href="https://www.pinksale.finance/launchpad/0xfd73cCF13F1DAaFb807FAdf03Cef21ef06aC8f63?chain=BSC" target="_blank" style="
-          display: inline-block;
-          background-color: #d4af37;
-          color: black;
-          padding: 10px 24px;
-          border-radius: 10px;
-          font-size: 16px;
-          font-weight: bold;
-          text-decoration: none;
-          margin-top: 15px;
-        ">Join Presale</a>
-      </div>
+      ">Join Presale</a>
     </div>
-
-    <!-- Continue with your content sections -->
-    <!-- ... باقي المحتوى مثل About, Tokenomics, Roadmap, FAQ, Team, Footer ... -->
-
-    <div class="disclaimer">
-      BNKX is a community-driven token created for experimental and educational purposes...
-    </div>
+    <!-- REST OF CONTENT BELOW COUNTDOWN -->
   </div>
 
-  <footer style="background-color: #111; color: #777; padding: 30px 20px; margin-top: 80px; font-size: 14px; text-align: center;">
-    <div style="margin-bottom: 10px;">
-      <a href="https://bnkx.net" style="color: #d4af37; text-decoration: none; margin: 0 10px;">Website</a>
-      <a href="https://twitter.com/BNKX_Official" target="_blank" style="color: #d4af37; text-decoration: none; margin: 0 10px;">Twitter</a>
-      <a href="https://t.me/BNKX_Community" target="_blank" style="color: #d4af37; text-decoration: none; margin: 0 10px;">Telegram</a>
-      <a href="mailto:bnkx@bnkx.net" style="color: #d4af37; text-decoration: none; margin: 0 10px;">Email</a>
-    </div>
-    <div style="margin-top: 10px;">
-      &copy; 2025 BNKX. All rights reserved. Built for the future of decentralized finance.
-    </div>
-  </footer>
-
-  <!-- ✅ Countdown Script -->
   <script>
-    const countdownLabel = document.getElementById("countdown-label");
+    const targetDate = new Date("2025-08-03T18:00:00Z").getTime();
     const countdownEl = document.getElementById("countdown");
-
-    const presaleStart = new Date("2025-08-03T00:00:00Z").getTime();
-    const presaleEnd = new Date("2025-08-04T00:00:00Z").getTime();
-
-    function updateCountdown() {
+    const updateCountdown = () => {
       const now = new Date().getTime();
-      let distance;
-      if (now < presaleStart) {
-        distance = presaleStart - now;
-        countdownLabel.innerText = "Presale starts in:";
-      } else if (now >= presaleStart && now < presaleEnd) {
-        distance = presaleEnd - now;
-        countdownLabel.innerText = "Presale ends in:";
-      } else {
-        countdownEl.innerHTML = "🚀 Presale Ended";
-        countdownLabel.innerText = "";
+      const distance = targetDate - now;
+      if (distance < 0) {
+        countdownEl.innerHTML = "🚀 It's Live!";
         return;
       }
-
       const days = Math.floor(distance / (1000 * 60 * 60 * 24));
       const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
       const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
       const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-      countdownEl.innerHTML =
-        days + "d " + hours + "h " + minutes + "m " + seconds + "s";
+      countdownEl.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
     }
-
-    updateCountdown();
     setInterval(updateCountdown, 1000);
+    updateCountdown();
   </script>
 </body>
 </html>
