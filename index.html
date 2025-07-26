@@ -124,6 +124,35 @@
       text-align: center;
       padding: 0 20px 40px;
     }
+    .countdown-box {
+      background-color: #1a1a1a;
+      padding: 30px;
+      border-radius: 12px;
+      margin: 40px 0;
+      box-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
+    }
+    .countdown-timer {
+      font-size: 32px;
+      font-weight: bold;
+      margin-top: 20px;
+    }
+    .countdown-label {
+      color: #ccc;
+      font-size: 18px;
+      margin-top: 10px;
+    }
+    .join-btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 14px 28px;
+      font-size: 18px;
+      font-weight: bold;
+      background-color: #d4af37;
+      color: black;
+      border-radius: 10px;
+      text-decoration: none;
+      box-shadow: 0 0 10px #d4af37;
+    }
   </style>
 </head>
 <body>
@@ -140,62 +169,49 @@
     </nav>
   </header>
 
-  <div class="container">
+  <main class="container">
     <img src="logo.png" alt="BNKX Official Logo">
     <h1>BNKX is Reaching New Heights</h1>
     <p>The future of digital finance begins here. Affordable, accessible, and ambitious – just like you.</p>
 
-    <section id="countdown">
+    <div class="countdown-box">
       <h2>⏳ BNKX Presale Countdown</h2>
-      <p id="presale-status" style="font-size: 22px; color: #ff4d4d;"></p>
-      <p id="countdown-text" style="font-size: 20px; color: #ccc;"></p>
-      <div id="countdown-timer" style="font-size: 36px; font-weight: bold; margin-bottom: 40px;"></div>
-    </section>
+      <div class="countdown-label" id="countdownLabel">Presale starts in:</div>
+      <div id="countdown" class="countdown-timer">Loading...</div>
+      <a href="https://www.pinksale.finance/launchpad/0xfd73cCF13F1DAaFb807FAdf03Cef21ef06aC8f63?chain=BSC" target="_blank" class="join-btn">Join Presale</a>
+    </div>
 
-    <!-- بقية الصفحة هنا بدون تغيير -->
-  </div>
+<script>
+const countdown = document.getElementById("countdown");
+const countdownLabel = document.getElementById("countdownLabel");
 
-  <script>
-    const presaleStatus = document.getElementById("presale-status");
-    const countdownText = document.getElementById("countdown-text");
-    const countdown = document.getElementById("countdown-timer");
+const startTime = new Date("2025-08-03T00:00:00Z").getTime();
+const endTime = new Date("2025-08-04T00:00:00Z").getTime();
 
-    const presaleStart = new Date("2025-08-03T00:00:00Z");
-    const presaleEnd = new Date("2025-09-03T00:00:00Z");
+function updateCountdown() {
+  const now = new Date().getTime();
+  let distance, label;
 
-    function updateCountdown() {
-      const now = new Date();
-      let target;
-      let label;
+  if (now < startTime) {
+    distance = startTime - now;
+    label = "Presale starts in:";
+  } else if (now >= startTime && now <= endTime) {
+    distance = endTime - now;
+    label = "Presale ends in:";
+  } else {
+    countdown.innerHTML = "Presale has ended.";
+    countdownLabel.innerHTML = "";
+    return;
+  }
 
-      if (now < presaleStart) {
-        target = presaleStart;
-        label = "Presale starts in:";
-        presaleStatus.innerHTML = "";
-      } else if (now >= presaleStart && now < presaleEnd) {
-        target = presaleEnd;
-        label = "Presale ends in:";
-        presaleStatus.innerHTML = "🔥 Presale Active Now!";
-      } else {
-        countdownText.innerHTML = "❗️ Presale has ended.";
-        countdown.innerHTML = "";
-        presaleStatus.innerHTML = "";
-        clearInterval(timer);
-        return;
-      }
+  const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-      const diff = target - now;
-      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
-      const minutes = Math.floor((diff / (1000 * 60)) % 60);
-      const seconds = Math.floor((diff / 1000) % 60);
+  countdown.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+  countdownLabel.innerHTML = label;
+}
 
-      countdownText.innerHTML = label;
-      countdown.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
-    }
-
-    updateCountdown();
-    const timer = setInterval(updateCountdown, 1000);
-  </script>
-</body>
-</html>
+setInterval(updateCountdown, 1000);
+</script>
