@@ -61,6 +61,17 @@
       font-size: 20px;
       margin-bottom: 40px;
     }
+    .social {
+      margin-top: 40px;
+      font-size: 20px;
+    }
+    .social a {
+      color: #d4af37;
+      text-decoration: none;
+    }
+    .social a:hover {
+      text-decoration: underline;
+    }
     .pill {
       background-color: #d4af37;
       color: black;
@@ -134,11 +145,7 @@
   </header>
 
   <div class="container">
-    <img src="logo.png" alt="BNKX Official Logo">
-    <h1>BNKX is Reaching New Heights</h1>
-    <p>The future of digital finance begins here. Affordable, accessible, and ambitious – just like you.</p>
-
-    <!-- Countdown Starts -->
+    <!-- COUNTDOWN COMPONENT HERE -->
     <div id="countdown-box" style="
       background-color: #1a1a1a;
       padding: 30px;
@@ -148,8 +155,8 @@
       max-width: 400px;
       width: 100%;
     ">
-      <h2 style="color: #d4af37; margin-bottom: 10px;">⏳ BNKX Presale Countdown</h2>
-      <p id="status-label" style="color: #ccc; font-size: 18px;">Checking status...</p>
+      <h2 style="color: #d4af37; margin-bottom: 10px;" id="status-label">⏳ BNKX Presale Countdown</h2>
+      <p style="color: #ccc; font-size: 18px;" id="phase-label">Presale starts in:</p>
       <div id="countdown" style="font-size: 28px; font-weight: bold; margin: 20px 0;">Loading...</div>
       <a href="https://www.pinksale.finance/launchpad/0xfd73cCF13F1DAaFb807FAdf03Cef21ef06aC8f63?chain=BSC" target="_blank" style="
         background-color: #d4af37;
@@ -162,53 +169,34 @@
         display: inline-block;
       ">Join Presale</a>
     </div>
-    <!-- Countdown Ends -->
-
-    <div class="disclaimer">
-      BNKX is a community-driven token created for experimental and educational purposes...
-    </div>
+    <!-- REST OF CONTENT BELOW COUNTDOWN -->
   </div>
 
-  <footer style="background-color: #111; color: #777; padding: 30px 20px; margin-top: 80px; font-size: 14px; text-align: center;">
-    <div style="margin-bottom: 10px;">
-      <a href="https://bnkx.net" style="color: #d4af37; text-decoration: none; margin: 0 10px;">Website</a>
-      <a href="https://twitter.com/BNKX_Official" target="_blank" style="color: #d4af37; text-decoration: none; margin: 0 10px;">Twitter</a>
-      <a href="https://t.me/BNKX_Community" target="_blank" style="color: #d4af37; text-decoration: none; margin: 0 10px;">Telegram</a>
-      <a href="mailto:bnkx@bnkx.net" style="color: #d4af37; text-decoration: none; margin: 0 10px;">Email</a>
-    </div>
-    <div style="margin-top: 10px;">
-      &copy; 2025 BNKX. All rights reserved. Built for the future of decentralized finance.
-    </div>
-  </footer>
-
-  <!-- Countdown Script -->
   <script>
     const startDate = new Date("2025-08-03T00:00:00Z").getTime();
-    const endDate = new Date("2025-09-03T00:00:00Z").getTime();
-
+    const endDate = new Date("2025-08-09T00:00:00Z").getTime();
     const countdownEl = document.getElementById("countdown");
     const statusLabel = document.getElementById("status-label");
+    const phaseLabel = document.getElementById("phase-label");
 
     function updateCountdown() {
       const now = new Date().getTime();
 
-      let target, label;
-
+      let distance = startDate - now;
       if (now < startDate) {
-        target = startDate;
-        label = "Presale starts in:";
-        statusLabel.innerHTML = label;
+        phaseLabel.textContent = "Presale starts in:";
+        statusLabel.textContent = "⏳ BNKX Presale Countdown";
       } else if (now >= startDate && now < endDate) {
-        target = endDate;
-        label = "🔥 Presale ends in:";
-        statusLabel.innerHTML = label;
+        distance = endDate - now;
+        phaseLabel.textContent = "Presale ends in:";
+        statusLabel.textContent = "🔥 Presale is Active Now!";
       } else {
-        statusLabel.innerHTML = "❗️ Presale has ended.";
-        countdownEl.innerHTML = "";
+        countdownEl.innerHTML = "⛔ Presale Ended";
+        phaseLabel.textContent = "";
+        statusLabel.textContent = "";
         return;
       }
 
-      const distance = target - now;
       const days = Math.floor(distance / (1000 * 60 * 60 * 24));
       const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
       const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
@@ -217,8 +205,8 @@
       countdownEl.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
     }
 
-    updateCountdown();
     setInterval(updateCountdown, 1000);
+    updateCountdown();
   </script>
 </body>
 </html>
