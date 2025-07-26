@@ -103,3 +103,12 @@
         const seconds = Math.floor((distance % (1000 * 60)) / 1000);
         countdownEl.innerHTML = `🕒 Presale ends in: <strong>${days}d ${hours}h ${minutes}m ${seconds}s</strong>`;
       } else {
+        countdownEl.innerHTML = "⏳ Presale has ended.";
+      }
+    }
+
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
+  </script>
+</body>
+</html>
