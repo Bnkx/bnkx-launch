@@ -61,94 +61,6 @@
     .buy-now:hover {
       background-color: #fff176;
     }
-    .container {
-      max-width: 700px;
-      margin: 20px auto 0;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-    img {
-      width: 220px;
-      margin-bottom: 40px;
-    }
-    h1 {
-      font-size: 40px;
-      color: #d4af37;
-      margin-bottom: 25px;
-    }
-    p {
-      color: #ccc;
-      font-size: 20px;
-      margin-bottom: 40px;
-    }
-    .social {
-      margin-top: 40px;
-      font-size: 20px;
-    }
-    .social a {
-      color: #d4af37;
-      text-decoration: none;
-    }
-    .social a:hover {
-      text-decoration: underline;
-    }
-    .pill {
-      background-color: #d4af37;
-      color: black;
-      padding: 5px 10px;
-      border-radius: 6px;
-    }
-    section {
-      padding: 0 20px;
-    }
-    section h2 {
-      font-size: 32px;
-      margin-bottom: 20px;
-      color: #d4af37;
-    }
-    section p {
-      font-size: 20px;
-      color: #ccc;
-      max-width: 700px;
-      margin: 0 auto 40px;
-    }
-    table {
-      margin: 0 auto 40px;
-      color: #d4af37;
-      font-size: 18px;
-      border-collapse: collapse;
-      width: 100%;
-      max-width: 700px;
-    }
-    table th, table td {
-      padding: 12px 20px;
-      border: 1px solid #d4af37;
-    }
-    table th {
-      background-color: #111;
-      text-align: left;
-    }
-    table td a {
-      color: #d4af37;
-      text-decoration: none;
-    }
-    table td a:hover {
-      text-decoration: underline;
-    }
-    ul {
-      list-style-type: disc;
-      margin-left: 20px;
-      color: #ccc;
-      font-size: 18px;
-    }
-    .disclaimer {
-      margin-top: 80px;
-      font-size: 12px;
-      color: #777;
-      text-align: center;
-      padding: 0 20px 40px;
-    }
   </style>
 </head>
 <body>
@@ -168,17 +80,10 @@
   <div class="countdown" id="countdown"></div>
   <a class="buy-now" href="https://www.pinksale.finance/launchpad/bsc/0x30474a135F3f1F70699540c4a355CbdB1986249d" target="_blank">🚀 Buy Now on PinkSale</a>
 
-  <div class="container">
-    <img src="logo.png" alt="BNKX Official Logo">
-    <h1>BNKX is Reaching New Heights</h1>
-    <p>The future of digital finance begins here. Affordable, accessible, and ambitious – just like you.</p>
-    <!-- باقي المحتوى هنا بدون تغيير -->
-  </div>
-
   <script>
     const countdownEl = document.getElementById('countdown');
     const startDate = new Date('August 3, 2025 00:00:00').getTime();
-    const endDate = new Date('August 31, 2025 23:59:59').getTime();
+    const endDate = new Date('September 3, 2025 00:00:00').getTime();
 
     function updateCountdown() {
       const now = new Date().getTime();
@@ -198,12 +103,3 @@
         const seconds = Math.floor((distance % (1000 * 60)) / 1000);
         countdownEl.innerHTML = `🕒 Presale ends in: <strong>${days}d ${hours}h ${minutes}m ${seconds}s</strong>`;
       } else {
-        countdownEl.innerHTML = "⏳ Presale has ended.";
-      }
-    }
-
-    setInterval(updateCountdown, 1000);
-    updateCountdown();
-  </script>
-</body>
-</html>
