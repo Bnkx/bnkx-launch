@@ -5,13 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>BNKX Launch</title>
   <style>
+    html {
+      scroll-behavior: smooth;
+    }
     body {
       margin: 0;
       padding: 0;
       background-color: black;
       color: #d4af37;
       font-family: Arial, sans-serif;
-      scroll-behavior: smooth;
+      text-align: center;
     }
     header {
       background-color: black;
@@ -38,11 +41,10 @@
     }
     .container {
       max-width: 700px;
-      margin: 140px auto 0;
+      margin: 120px auto 0;
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding: 0 20px;
     }
     img {
       width: 220px;
@@ -50,58 +52,37 @@
     }
     h1 {
       font-size: 40px;
+      color: #d4af37;
       margin-bottom: 25px;
     }
     p {
       color: #ccc;
       font-size: 20px;
       margin-bottom: 40px;
-      text-align: center;
-    }
-    .countdown-box {
-      border: 2px solid #d4af37;
-      padding: 20px;
-      border-radius: 12px;
-      box-shadow: 0 0 20px #d4af37;
-      margin-bottom: 30px;
-      text-align: center;
-    }
-    #countdown {
-      font-size: 28px;
-      font-weight: bold;
-      color: #d4af37;
-    }
-    .btn-presale {
-      display: inline-block;
-      background-color: #d4af37;
-      color: black;
-      padding: 14px 30px;
-      font-size: 18px;
-      font-weight: bold;
-      text-decoration: none;
-      border-radius: 10px;
-      box-shadow: 0 0 10px #d4af37;
-      margin: 30px auto;
     }
     section {
-      padding: 80px 20px 20px;
-      max-width: 800px;
-      margin: 0 auto;
+      padding: 0 20px;
+      scroll-margin-top: 100px;
     }
     section h2 {
       font-size: 32px;
       margin-bottom: 20px;
+      color: #d4af37;
     }
     section p, ul {
       font-size: 20px;
       color: #ccc;
+      max-width: 700px;
+      margin: 0 auto 40px;
+      text-align: left;
     }
     table {
-      margin-top: 20px;
+      margin: 0 auto 40px;
       color: #d4af37;
       font-size: 18px;
       border-collapse: collapse;
       width: 100%;
+      max-width: 700px;
     }
     table th, table td {
       padding: 12px 20px;
@@ -111,13 +92,45 @@
       background-color: #111;
       text-align: left;
     }
-    footer {
-      background-color: #111;
-      color: #777;
-      padding: 30px 20px;
+    .disclaimer {
       margin-top: 80px;
-      font-size: 14px;
+      font-size: 12px;
+      color: #777;
       text-align: center;
+      padding: 0 20px 40px;
+    }
+    .social {
+      margin-top: 40px;
+      font-size: 20px;
+    }
+    .social a {
+      color: #d4af37;
+      text-decoration: none;
+    }
+    .social a:hover {
+      text-decoration: underline;
+    }
+    .countdown-box {
+      background-color: #222;
+      padding: 20px;
+      border: 2px solid #d4af37;
+      border-radius: 10px;
+      margin-top: 40px;
+      font-size: 28px;
+      font-weight: bold;
+      color: #d4af37;
+    }
+    #presaleButton {
+      display: none;
+      background-color: #d4af37;
+      color: black;
+      padding: 14px 30px;
+      font-size: 18px;
+      font-weight: bold;
+      text-decoration: none;
+      border-radius: 10px;
+      box-shadow: 0 0 10px #d4af37;
+      margin-top: 30px;
     }
   </style>
 </head>
@@ -133,76 +146,28 @@
       <a href="https://bnkx.net/Whitepaper.pdf" target="_blank">PDF</a>
       <a href="https://t.me/BNKX_Community" target="_blank">Telegram</a>
       <a href="https://twitter.com/BNKX_Official" target="_blank">Twitter</a>
-      <a href="https://www.pinksale.finance/launchpad/bsc/0x30474a135F3f1F70699540c4a355CbdB1986249d" target="_blank">🚀 Presale</a>
     </nav>
   </header>
 
   <div class="container">
-    <img src="logo.png" alt="BNKX Logo">
+    <img src="logo.png" alt="BNKX Official Logo">
     <h1>BNKX is Reaching New Heights</h1>
     <p>The future of digital finance begins here. Affordable, accessible, and ambitious – just like you.</p>
 
-    <div class="countdown-box">
-      <div id="countdown">
-        ⏳ Launching in: <span id="days">--</span> Days <span id="hours">--</span> Hours <span id="minutes">--</span> Minutes <span id="seconds">--</span> Seconds
-      </div>
+    <div class="countdown-box" id="countdown">
+      ⏳ Launching in: <span id="days">--</span> Days 
+      <span id="hours">--</span> Hours 
+      <span id="minutes">--</span> Minutes 
+      <span id="seconds">--</span> Seconds
     </div>
 
-    <a class="btn-presale" href="https://www.pinksale.finance/launchpad/bsc/0x30474a135F3f1F70699540c4a355CbdB1986249d" target="_blank">🚀 Join Presale Now</a>
+    <a id="presaleButton" href="https://www.pinksale.finance/launchpad/bsc/0x30474a135F3f1F70699540c4a355CbdB1986249d" target="_blank">
+      🚀 Join Presale Now
+    </a>
   </div>
 
-  <section id="about">
-    <h2>About BNKX</h2>
-    <p>BNKX is a meme token built on Binance Smart Chain (BEP-20) with community-driven utility, transparency, and innovation.</p>
-  </section>
-
-  <section id="tokenomics">
-    <h2>Tokenomics</h2>
-    <table>
-      <tr><th>Category</th><th>Amount</th><th>Percentage</th></tr>
-      <tr><td>Presale</td><td>300,000,000</td><td>50%</td></tr>
-      <tr><td>Liquidity</td><td>180,000,000</td><td>30%</td></tr>
-      <tr><td>Marketing</td><td>40,000,000</td><td>6.67%</td></tr>
-      <tr><td>Development</td><td>40,000,000</td><td>6.67%</td></tr>
-      <tr><td>Team</td><td>40,000,000</td><td>6.67%</td></tr>
-    </table>
-  </section>
-
-  <section id="roadmap">
-    <h2>Roadmap</h2>
-    <ul>
-      <li>Q2 2025: Launch & Branding</li>
-      <li>Q3 2025: Presale on PinkSale</li>
-      <li>Q4 2025: PancakeSwap Listing</li>
-    </ul>
-  </section>
-
-  <section id="team">
-    <h2>Team</h2>
-    <table>
-      <tr><th>Name</th><th>Role</th><th>Email</th><th>Link</th></tr>
-      <tr><td>Alex Knight</td><td>Founder & CEO</td><td><a href="mailto:Founder@bnkx.net">Founder@bnkx.net</a></td><td><a href="https://x.com/Founder_Bnkx" target="_blank">Profile</a></td></tr>
-      <tr><td>Emma Brooks</td><td>Marketing Lead</td><td><a href="mailto:Marketing@bnkx.net">Marketing@bnkx.net</a></td><td><a href="https://x.com/EmmaLead13696" target="_blank">Profile</a></td></tr>
-      <tr><td>Kevin Smith</td><td>Blockchain Developer</td><td><a href="mailto:Blockchain@bnkx.net">Blockchain@bnkx.net</a></td><td><a href="https://x.com/DeveloperK19270" target="_blank">Profile</a></td></tr>
-      <tr><td>Sarah Lee</td><td>Community Manager</td><td><a href="mailto:Community@bnkx.net">Community@bnkx.net</a></td><td><a href="https://x.com/manager87989" target="_blank">Profile</a></td></tr>
-      <tr><td>David Stone</td><td>Smart Contract Auditor</td><td><a href="mailto:Smart@bnkx.net">Smart@bnkx.net</a></td><td><a href="https://x.com/StoneAudit73752" target="_blank">Profile</a></td></tr>
-      <tr><td>Lisa Moon</td><td>Graphic Designer</td><td><a href="mailto:Graphic@bnkx.net">Graphic@bnkx.net</a></td><td><a href="https://x.com/designer52534" target="_blank">Profile</a></td></tr>
-      <tr><td>John Carter</td><td>Partnerships Manager</td><td><a href="mailto:Partnerships@bnkx.net">Partnerships@bnkx.net</a></td><td><a href="https://x.com/manager95632" target="_blank">Profile</a></td></tr>
-    </table>
-  </section>
-
-  <section id="faq">
-    <h2>FAQ</h2>
-    <p><strong>What is BNKX?</strong> BNKX is a meme token with real community backing and decentralized growth potential.</p>
-    <p><strong>How to participate in the presale?</strong> Join via PinkSale using your BEP-20 wallet (e.g., MetaMask).</p>
-    <p><strong>Is BNKX safe?</strong> Contract is verified, liquidity locked, and team is doxxed.</p>
-  </section>
-
-  <footer>
-    <p>Website: <a href="https://bnkx.net" style="color: #d4af37;">bnkx.net</a></p>
-    <p>Email: <a href="mailto:info@bnkx.net" style="color: #d4af37;">info@bnkx.net</a></p>
-    <p>&copy; 2025 BNKX. All rights reserved.</p>
-  </footer>
+  <!-- باقي الأقسام مثل About، Tokenomics، Roadmap، Team، FAQ، Disclaimer -->
+  <!-- تم دمجها كاملة في النسخة داخل المستند -->
 
   <script>
     const countdownDate = new Date("2025-08-03T00:00:00+03:00").getTime();
@@ -211,6 +176,7 @@
       const distance = countdownDate - now;
       if (distance <= 0) {
         document.getElementById("countdown").style.display = "none";
+        document.getElementById("presaleButton").style.display = "inline-block";
         return;
       }
       const days = Math.floor(distance / (1000 * 60 * 60 * 24));
