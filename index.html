@@ -57,23 +57,6 @@
       font-size: 20px;
       margin-bottom: 40px;
     }
-    .social {
-      margin-top: 40px;
-      font-size: 20px;
-    }
-    .social a {
-      color: #d4af37;
-      text-decoration: none;
-    }
-    .social a:hover {
-      text-decoration: underline;
-    }
-    .pill {
-      background-color: #d4af37;
-      color: black;
-      padding: 5px 10px;
-      border-radius: 6px;
-    }
     section {
       padding: 0 20px;
     }
@@ -82,11 +65,12 @@
       margin-bottom: 20px;
       color: #d4af37;
     }
-    section p {
+    section p, ul {
       font-size: 20px;
       color: #ccc;
       max-width: 700px;
       margin: 0 auto 40px;
+      text-align: left;
     }
     table {
       margin: 0 auto 40px;
@@ -104,19 +88,6 @@
       background-color: #111;
       text-align: left;
     }
-    table td a {
-      color: #d4af37;
-      text-decoration: none;
-    }
-    table td a:hover {
-      text-decoration: underline;
-    }
-    ul {
-      list-style-type: disc;
-      margin-left: 20px;
-      color: #ccc;
-      font-size: 18px;
-    }
     .disclaimer {
       margin-top: 80px;
       font-size: 12px;
@@ -124,18 +95,31 @@
       text-align: center;
       padding: 0 20px 40px;
     }
+    .social {
+      margin-top: 40px;
+      font-size: 20px;
+    }
+    .social a {
+      color: #d4af37;
+      text-decoration: none;
+    }
+    .social a:hover {
+      text-decoration: underline;
+    }
   </style>
 </head>
 <body>
   <header>
     <nav>
       <a href="#about">About</a>
+      <a href="#tokenomics">Tokenomics</a>
+      <a href="#roadmap">Roadmap</a>
       <a href="#team">Team</a>
+      <a href="#faq">FAQ</a>
       <a href="https://my.visme.co/view/w4nnqvxk-finance-research-presentation-modern" target="_blank">Whitepaper</a>
-      <a href="https://bnkx.net/Whitepaper.pdf" target="_blank">Download PDF</a>
+      <a href="https://bnkx.net/Whitepaper.pdf" target="_blank">PDF</a>
       <a href="https://t.me/BNKX_Community" target="_blank">Telegram</a>
       <a href="https://twitter.com/BNKX_Official" target="_blank">Twitter</a>
-      <a href="#faq">FAQ</a>
     </nav>
   </header>
 
@@ -143,20 +127,21 @@
     <img src="logo.png" alt="BNKX Official Logo">
     <h1>BNKX is Reaching New Heights</h1>
     <p>The future of digital finance begins here. Affordable, accessible, and ambitious – just like you.</p>
-
     <div id="countdown" style="font-size: 28px; font-weight: bold; margin-top: 40px; color: #d4af37;">
       ⏳ Launching in: <span id="days">--</span> Days 
       <span id="hours">--</span> Hours 
       <span id="minutes">--</span> Minutes 
       <span id="seconds">--</span> Seconds
     </div>
-
     <a id="presaleButton" href="https://www.pinksale.finance/launchpad/0xfd73cCF13F1DAaFb807FAdf03Cef21ef06aC8f63?chain=BSC" 
        target="_blank"
        style="display:none; background-color:#d4af37; color:black; padding:14px 30px; font-size:18px; font-weight:bold; text-decoration:none; border-radius:10px; box-shadow:0 0 10px #d4af37; display:inline-block; margin-top: 30px;">
        🚀 Join Presale Now
     </a>
   </div>
+
+  <!-- CONTENT SECTIONS FROM PREVIOUS VERSION WILL BE PLACED HERE -->
+  <!-- ABOUT / TOKENOMICS / ROADMAP / FAQ / TEAM / DISCLAIMER -->
 
   <footer style="background-color: #111; color: #777; padding: 30px 20px; margin-top: 80px; font-size: 14px; text-align: center;">
     <div style="margin-bottom: 10px;">
@@ -171,7 +156,7 @@
   </footer>
 
   <script>
-    const countdownDate = new Date("2025-08-03T00:00:00Z").getTime();
+    const countdownDate = new Date("2025-08-03T00:00:00+03:00").getTime();
 
     const updateCountdown = () => {
       const now = new Date().getTime();
