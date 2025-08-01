@@ -5,42 +5,111 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>BNKX Launch</title>
   <style>
-    body { margin: 0; padding: 0; background-color: black; color: #d4af37; font-family: Arial, sans-serif; text-align: center; }
-    header { background-color: black; padding: 20px; position: fixed; top: 0; width: 100%; z-index: 999; border-bottom: 1px solid #d4af37; }
-    nav { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; font-size: 18px; }
-    nav a { color: #d4af37; text-decoration: none; }
-    nav a:hover { text-decoration: underline; }
-    .container { max-width: 700px; margin: 120px auto 0; display: flex; flex-direction: column; align-items: center; }
-    img { width: 220px; margin-bottom: 40px; }
-    h1 { font-size: 40px; color: #d4af37; margin-bottom: 25px; }
-    p { color: #ccc; font-size: 20px; margin-bottom: 40px; }
-    section { padding: 0 20px; }
-    section h2 { font-size: 32px; margin-bottom: 20px; color: #d4af37; }
-    section p, ul { font-size: 20px; color: #ccc; max-width: 700px; margin: 0 auto 40px; text-align: left; }
-    table { margin: 0 auto 40px; color: #d4af37; font-size: 18px; border-collapse: collapse; width: 100%; max-width: 700px; }
-    table th, table td { padding: 12px 20px; border: 1px solid #d4af37; }
-    table th { background-color: #111; text-align: left; }
-    .disclaimer { margin-top: 80px; font-size: 12px; color: #777; text-align: center; padding: 0 20px 40px; }
-    .social { margin-top: 40px; font-size: 20px; }
-    .social a { color: #d4af37; text-decoration: none; }
-    .social a:hover { text-decoration: underline; }
-    #countdown-box {
-      background-color: #1a1a1a;
-      border: 2px solid #d4af37;
-      border-radius: 12px;
-      padding: 20px 30px;
-      box-shadow: 0 0 20px rgba(212, 175, 55, 0.5);
-      margin-top: 40px;
-      display: inline-block;
-      font-size: 28px;
-      font-weight: bold;
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: black;
       color: #d4af37;
-      animation: pulse 2s infinite;
+      font-family: Arial, sans-serif;
+      text-align: center;
     }
-    @keyframes pulse {
-      0% { box-shadow: 0 0 10px #d4af37; }
-      50% { box-shadow: 0 0 20px #d4af37; }
-      100% { box-shadow: 0 0 10px #d4af37; }
+    header {
+      background-color: black;
+      padding: 20px;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 999;
+      border-bottom: 1px solid #d4af37;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+      font-size: 18px;
+    }
+    nav a {
+      color: #d4af37;
+      text-decoration: none;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    .container {
+      max-width: 700px;
+      margin: 120px auto 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    img {
+      width: 220px;
+      margin-bottom: 20px;
+    }
+    h1 {
+      font-size: 40px;
+      color: #d4af37;
+      margin-bottom: 10px;
+    }
+    .tagline {
+      font-size: 22px;
+      color: #d4af37;
+      margin-bottom: 30px;
+    }
+    p {
+      color: #ccc;
+      font-size: 20px;
+      margin-bottom: 40px;
+    }
+    section {
+      padding: 0 20px;
+    }
+    section h2 {
+      font-size: 32px;
+      margin-bottom: 20px;
+      color: #d4af37;
+    }
+    section p, ul {
+      font-size: 20px;
+      color: #ccc;
+      max-width: 700px;
+      margin: 0 auto 40px;
+      text-align: left;
+    }
+    table {
+      margin: 0 auto 40px;
+      color: #d4af37;
+      font-size: 18px;
+      border-collapse: collapse;
+      width: 100%;
+      max-width: 700px;
+    }
+    table th, table td {
+      padding: 12px 20px;
+      border: 1px solid #d4af37;
+    }
+    table th {
+      background-color: #111;
+      text-align: left;
+    }
+    .disclaimer {
+      margin-top: 80px;
+      font-size: 12px;
+      color: #777;
+      text-align: center;
+      padding: 0 20px 40px;
+    }
+    .social {
+      margin-top: 40px;
+      font-size: 20px;
+    }
+    .social a {
+      color: #d4af37;
+      text-decoration: none;
+    }
+    .social a:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
@@ -52,6 +121,9 @@
       <a href="#roadmap">Roadmap</a>
       <a href="#team">Team</a>
       <a href="#faq">FAQ</a>
+      <a href="#milestones">Milestones</a>
+      <a href="#partners">Partners</a>
+      <a href="#media">Media</a>
       <a href="https://my.visme.co/view/w4nnqvxk-finance-research-presentation-modern" target="_blank">Whitepaper</a>
       <a href="https://bnkx.net/Whitepaper.pdf" target="_blank">PDF</a>
       <a href="https://t.me/BNKX_Community" target="_blank">Telegram</a>
@@ -62,37 +134,32 @@
   <div class="container">
     <img src="logo.png" alt="BNKX Official Logo">
     <h1>BNKX is Reaching New Heights</h1>
+    <div class="tagline">🚀 BNKX is almost here...</div>
     <p>The future of digital finance begins here. Affordable, accessible, and ambitious – just like you.</p>
-    <div id="countdown-box">
-      ⏳ Launching in: <span id="days">--</span> Days 
-      <span id="hours">--</span> Hours 
-      <span id="minutes">--</span> Minutes 
-      <span id="seconds">--</span> Seconds
-    </div>
     <a id="presaleButton" href="https://www.pinksale.finance/launchpad/bsc/0x30474a135F3f1F70699540c4a355CbdB1986249d" 
        target="_blank"
-       style="display:none; background-color:#d4af37; color:black; padding:14px 30px; font-size:18px; font-weight:bold; text-decoration:none; border-radius:10px; box-shadow:0 0 10px #d4af37; margin-top: 30px;">
+       style="background-color:#d4af37; color:black; padding:14px 30px; font-size:18px; font-weight:bold; text-decoration:none; border-radius:10px; box-shadow:0 0 10px #d4af37; margin-top: 30px;">
        🚀 Join Presale Now
     </a>
   </div>
 
   <section id="about">
     <h2>About BNKX</h2>
-    <p>BNKX is a bold and visionary meme token born on the Binance Smart Chain. Built for a new generation of digital finance believers, BNKX combines scarcity, community, and simplicity. With a total supply of 600 million tokens, fair launch mechanics, and a golden standard in transparency, BNKX aims to reach the peak of meme-utility and investor confidence.</p>
+    <p>BNKX is a bold and visionary meme token born on the Binance Smart Chain. Built for a new generation of digital finance believers, BNKX combines scarcity, community, and simplicity.</p>
     <p><strong>Token Symbol:</strong> BNKX</p>
     <p><strong>Smart Contract:</strong> <a href="https://bscscan.com/address/0xfd73cCF13F1DAaFb807FAdf03Cef21ef06aC8f63" target="_blank" style="color:#d4af37; text-decoration: underline;">0xfd73cCF13F1DAaFb807FAdf03Cef21ef06aC8f63</a></p>
   </section>
 
   <section id="tokenomics">
     <h2>Tokenomics</h2>
-    <p>The BNKX Token is designed with fairness, liquidity, and growth in mind. A total of 600 million tokens have been allocated as follows:</p>
+    <p>A total of 600 million tokens have been allocated as follows:</p>
     <table>
       <thead>
         <tr><th>Category</th><th>Amount</th><th>Percentage</th></tr>
       </thead>
       <tbody>
         <tr><td>Presale</td><td>300,000,000</td><td>50%</td></tr>
-        <tr><td>Liquidity (LP)</td><td>180,000,000</td><td>30%</td></tr>
+        <tr><td>Liquidity</td><td>180,000,000</td><td>30%</td></tr>
         <tr><td>Marketing</td><td>40,000,000</td><td>6.67%</td></tr>
         <tr><td>Development & Research</td><td>40,000,000</td><td>6.67%</td></tr>
         <tr><td>Team & Reserves</td><td>40,000,000</td><td>6.67%</td></tr>
@@ -131,6 +198,33 @@
     </div>
   </section>
 
+  <section id="milestones">
+    <h2>Milestones</h2>
+    <ul>
+      <li>🌐 Domain secured: bnkx.net</li>
+      <li>📜 Smart contract verified on BscScan</li>
+      <li>📢 Social channels launched (Telegram, Twitter, TikTok)</li>
+      <li>🚀 Presale page created on PinkSale</li>
+      <li>📈 Target funding: $30,000 USDT</li>
+    </ul>
+  </section>
+
+  <section id="partners">
+    <h2>Partners & Collaborations</h2>
+    <ul>
+      <li>🤝 Partnering with DeFi communities for launch support</li>
+      <li>🛠️ Integrating with influencers and crypto media</li>
+      <li>🔗 Listing target: PancakeSwap, then CoinGecko</li>
+    </ul>
+  </section>
+
+  <section id="media">
+    <h2>Press & Media</h2>
+    <ul>
+      <li><a href="https://cryptonews.com/news/bnkx-ready-for-launch.htm" target="_blank">CryptoNews: BNKX Ready for Launch</a></li>
+      <li><a href="https://defiblog.io/bnkx-pioneer" target="_blank">DeFi Blog: BNKX – A Pioneer Meme Token</a></li>
+    </ul>
+  </section>
   <section id="faq">
     <h2>Frequently Asked Questions (FAQ)</h2>
     <div style="text-align: left; max-width: 700px; margin: 0 auto;">
@@ -175,28 +269,5 @@
     </div>
     <div style="margin-top: 10px;">&copy; 2025 BNKX. All rights reserved. Built for the future of decentralized finance.</div>
   </footer>
-
-  <script>
-    const countdownDate = new Date("2025-08-03T00:00:00+03:00").getTime();
-    const updateCountdown = () => {
-      const now = new Date().getTime();
-      const distance = countdownDate - now;
-      if (distance <= 0) {
-        document.getElementById("countdown-box").style.display = "none";
-        document.getElementById("presaleButton").style.display = "inline-block";
-        return;
-      }
-      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-      document.getElementById("days").innerText = days;
-      document.getElementById("hours").innerText = hours;
-      document.getElementById("minutes").innerText = minutes;
-      document.getElementById("seconds").innerText = seconds;
-    };
-    updateCountdown();
-    setInterval(updateCountdown, 1000);
-  </script>
 </body>
 </html>
