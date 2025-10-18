@@ -6,7 +6,6 @@
 <title>BNKX — Be Early. Be Bold. Be BNKX.</title>
 <meta name="description" content="BNKX is a bold, community-driven meme token on BNB Smart Chain. Be Early. Be Bold. Be BNKX.">
 <link rel="icon" href="https://bnkx.net/logo-32.svg">
-
 <style>
   :root{
     --bg:#000; --panel:#0f0f0f; --panel-2:#0b0b0b;
@@ -68,7 +67,6 @@
   h2{font-size:32px;color:var(--gold);margin:0 0 20px}
   .cols{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
   @media (max-width:900px){ .cols{grid-template-columns:1fr} }
-
   .card{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:18px}
   .tokenomics .card h3{margin:0 0 6px}
   .tokenomics .card p{margin:0;color:#ccc}
@@ -102,7 +100,7 @@
     </div>
     <nav class="links">
       <a href="#buy">Buy</a>
-      <a href="#chart">Chart</a>
+      <a href="#live">Live</a>
       <a href="#tokenomics">Tokenomics</a>
       <a href="#roadmap">Roadmap</a>
       <a href="#faq">FAQ</a>
@@ -136,7 +134,7 @@
 
       <div class="hero-cta">
         <a class="btn btn--gold" href="https://pancakeswap.finance/swap?inputCurrency=0xfd73cCF13F1DAaFb807FAdf03Cef21ef06aC8f63&outputCurrency=0x55d398326f99059fF775485246999027B3197955" target="_blank">Buy on PancakeSwap</a>
-        <a class="btn" href="#chart">View Live Chart</a>
+        <a class="btn" href="#live">View Live Trading</a>
         <a class="btn" href="https://www.pinksale.finance/launchpad/bsc/0x30474a135F3f1F70699540c4a355CbdB1986249d" target="_blank">PinkSale (TBA)</a>
       </div>
     </div>
@@ -153,14 +151,17 @@
   </div>
 </header>
 
-<!-- Chart -->
-<section id="chart">
+<!-- Live Trading: DEXTools Chart + DEXTswap Aggregator -->
+<section id="live" style="background:#000; padding:60px 0; text-align:center; color:#d4af37;">
   <div class="container">
-    <h2>BNKX Live Chart</h2>
-    <p style="color:#ccc">Real-time BNKX/USDT price, liquidity and trades powered by DEXTools.</p>
-    <div style="border:2px solid #d4af37;border-radius:12px;overflow:hidden;">
+    <h2 style="font-size:32px; margin-bottom:10px;">BNKX Live Trading</h2>
+    <p style="color:#ccc; margin-bottom:26px;">Real-time BNKX/USDT chart and instant swap powered by DEXTools.</p>
+
+    <!-- DEXTools Live Chart -->
+    <div style="border:2px solid #d4af37; border-radius:12px; overflow:hidden; margin-bottom:34px;">
       <iframe
-        title="BNKX DEXTools Live Chart"
+        id="dextools-widget"
+        title="BNKX DEXTools Chart"
         width="100%"
         height="520"
         frameborder="0"
@@ -168,8 +169,26 @@
         src="https://www.dextools.io/widget-chart/en/bnb/pancakeswapv2/0x7b5c735f56377036f1da2be914b1438728de7ca9?theme=dark&chartType=2&chartResolution=30&drawingToolbars=false">
       </iframe>
     </div>
-    <p style="margin-top:10px;color:#8e8e8e;font-size:13px">
-      If the chart doesn't load, <a href="https://www.dextools.io/app/en/bnb/pair-explorer/0x7b5c735f56377036f1da2be914b1438728de7ca9" target="_blank">open on DEXTools</a>.
+
+    <!-- DEXTswap Aggregator (Swap inside your page) -->
+    <h3 style="margin:0 0 16px;">Swap BNKX Instantly</h3>
+    <div style="display:flex; justify-content:center;">
+      <div style="border:2px solid #d4af37; border-radius:12px; overflow:hidden;">
+        <iframe
+          id="dextswap-aggregator-widget"
+          title="DEXTswap Aggregator"
+          width="400"
+          height="420"
+          frameborder="0"
+          style="border:0;"
+          src="https://www.dextools.io/widget-aggregator/en/swap/bnb/0xfd73ccf13f1daafb807fadf03cef21ef06ac8f63">
+        </iframe>
+      </div>
+    </div>
+
+    <p style="color:#999; margin-top:18px; font-size:14px;">
+      Open directly in DEXTools:
+      <a href="https://www.dextools.io/app/en/bnb/pair-explorer/0x7b5c735f56377036f1da2be914b1438728de7ca9" target="_blank" style="color:#d4af37;">Pair Explorer</a>
     </p>
   </div>
 </section>
