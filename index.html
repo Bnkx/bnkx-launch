@@ -136,6 +136,18 @@
     }
     .bnkx-buy-btn:active { transform:translateY(0); }
     .bnkx-icon { font-size:1.2rem; filter:drop-shadow(0 1px 0 rgba(0,0,0,.15)); }
+
+    /* === Coinsniper Widget === */
+    #cs-widget {
+      margin-top: 40px;
+      border: 1px solid #d4af37;
+      padding: 20px;
+      border-radius: 10px;
+      background: #111;
+      box-shadow: 0 0 20px rgba(212,175,55,0.3);
+      max-width: 500px;
+      width: 100%;
+    }
   </style>
 </head>
 <body>
@@ -174,6 +186,9 @@
        target="_blank" rel="noopener noreferrer">
        <span class="bnkx-icon">🟡</span> Buy <strong>BNKX</strong>
     </a>
+
+    <!-- 🟡 Coinsniper Widget -->
+    <div id="cs-widget" data-id="86662" data-name="BNKX"></div>
   </div>
 
   <section id="about">
@@ -281,5 +296,8 @@
     </div>
     <div style="margin-top: 10px;">&copy; 2025 BNKX. All rights reserved. Built for the future of decentralized finance.</div>
   </footer>
+
+  <!-- ✅ Coinsniper Script -->
+  <script src="https://coinsniper.net/widget.min.js"></script>
 </body>
 </html>
