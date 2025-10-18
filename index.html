@@ -111,6 +111,31 @@
     .social a:hover {
       text-decoration: underline;
     }
+    /* === BNKX Buy Button === */
+    .bnkx-buy-btn {
+      display:inline-flex;
+      align-items:center;
+      gap:.6rem;
+      padding:.9rem 1.4rem;
+      border-radius:999px;
+      background:linear-gradient(135deg,#c9a646,#f5d06f 45%,#b9902e);
+      color:#111;
+      font-weight:700;
+      text-decoration:none;
+      box-shadow:0 6px 20px rgba(245,208,111,.35), inset 0 1px 0 rgba(255,255,255,.35);
+      border:1px solid rgba(185,144,46,.55);
+      transition:transform .15s ease, box-shadow .15s ease, filter .15s ease;
+      letter-spacing:.2px;
+      font-size:18px;
+      margin-top:20px;
+    }
+    .bnkx-buy-btn:hover {
+      transform:translateY(-2px);
+      filter:saturate(1.08);
+      box-shadow:0 10px 26px rgba(245,208,111,.4), inset 0 1px 0 rgba(255,255,255,.45);
+    }
+    .bnkx-buy-btn:active { transform:translateY(0); }
+    .bnkx-icon { font-size:1.2rem; filter:drop-shadow(0 1px 0 rgba(0,0,0,.15)); }
   </style>
 </head>
 <body>
@@ -136,10 +161,18 @@
     <h1>BNKX is Reaching New Heights</h1>
     <div class="tagline">🚀 BNKX is almost here...</div>
     <p>The future of digital finance begins here. Affordable, accessible, and ambitious – just like you.</p>
+
     <a id="presaleButton" href="https://www.pinksale.finance/launchpad/bsc/0x30474a135F3f1F70699540c4a355CbdB1986249d" 
        target="_blank"
        style="background-color:#d4af37; color:black; padding:14px 30px; font-size:18px; font-weight:bold; text-decoration:none; border-radius:10px; box-shadow:0 0 10px #d4af37; margin-top: 30px;">
        🚀 Join Presale Now
+    </a>
+
+    <!-- Buy BNKX Button -->
+    <a class="bnkx-buy-btn" 
+       href="https://pancakeswap.finance/swap?inputCurrency=0xfd73cCF13F1DAaFb807FAdf03Cef21ef06aC8f63&outputCurrency=0x55d398326f99059fF775485246999027B3197955" 
+       target="_blank" rel="noopener noreferrer">
+       <span class="bnkx-icon">🟡</span> Buy <strong>BNKX</strong>
     </a>
   </div>
 
@@ -154,9 +187,7 @@
     <h2>Tokenomics</h2>
     <p>A total of 600 million tokens have been allocated as follows:</p>
     <table>
-      <thead>
-        <tr><th>Category</th><th>Amount</th><th>Percentage</th></tr>
-      </thead>
+      <thead><tr><th>Category</th><th>Amount</th><th>Percentage</th></tr></thead>
       <tbody>
         <tr><td>Presale</td><td>300,000,000</td><td>50%</td></tr>
         <tr><td>Liquidity</td><td>180,000,000</td><td>30%</td></tr>
@@ -205,6 +236,7 @@
       <li><a href="https://defiblog.io/bnkx-pioneer" target="_blank">DeFi Blog: BNKX – A Pioneer Meme Token</a></li>
     </ul>
   </section>
+
   <section id="faq">
     <h2>Frequently Asked Questions (FAQ)</h2>
     <div style="text-align: left; max-width: 700px; margin: 0 auto;">
