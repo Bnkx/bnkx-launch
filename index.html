@@ -5,153 +5,195 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>BNKX Launch</title>
   <style>
+    :root{
+      --gold:#d4af37;
+      --bg:#000;
+      --card:#111;
+    }
+    *{box-sizing:border-box}
     body {
       margin: 0;
       padding: 0;
-      background-color: black;
-      color: #d4af37;
+      background-color: var(--bg);
+      color: var(--gold);
       font-family: Arial, sans-serif;
       text-align: center;
     }
     header {
-      background-color: black;
+      background-color: var(--bg);
       padding: 20px;
       position: fixed;
       top: 0;
       width: 100%;
       z-index: 999;
-      border-bottom: 1px solid #d4af37;
+      border-bottom: 1px solid var(--gold);
     }
     nav {
       display: flex;
       justify-content: center;
-      gap: 30px;
+      gap: 26px;
       flex-wrap: wrap;
       font-size: 18px;
     }
     nav a {
-      color: #d4af37;
+      color: var(--gold);
       text-decoration: none;
     }
     nav a:hover {
       text-decoration: underline;
     }
     .container {
-      max-width: 800px;
+      max-width: 900px;
       margin: 120px auto 0;
       display: flex;
       flex-direction: column;
       align-items: center;
+      padding: 0 18px;
     }
     img {
       width: 260px;
-      margin-bottom: 25px;
+      margin-bottom: 20px;
     }
     h1 {
       font-size: 44px;
-      color: #d4af37;
-      margin-bottom: 20px;
+      margin: 8px 0 14px;
     }
     p {
       color: #ccc;
-      font-size: 22px;
-      margin-bottom: 40px;
+      font-size: 20px;
+      margin: 0 0 28px;
+      max-width: 760px;
     }
     section {
-      padding: 0 20px;
+      padding: 0 18px;
     }
     section h2 {
       font-size: 32px;
-      margin-bottom: 20px;
-      color: #d4af37;
+      margin: 30px 0 16px;
     }
     section p, ul {
       font-size: 20px;
       color: #ccc;
-      max-width: 700px;
-      margin: 0 auto 40px;
+      max-width: 760px;
+      margin: 0 auto 32px;
       text-align: left;
     }
-    table {
-      margin: 0 auto 40px;
-      color: #d4af37;
+    table.bnkx {
+      margin: 24px auto 28px;
+      color: var(--gold);
       font-size: 18px;
       border-collapse: collapse;
       width: 100%;
-      max-width: 700px;
+      max-width: 520px;
+      background: var(--card);
+      border: 2px solid var(--gold);
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 0 24px rgba(212,175,55,.45);
     }
-    table th, table td {
-      padding: 12px 20px;
-      border: 1px solid #d4af37;
-    }
-    table th {
-      background-color: #111;
+    table.bnkx th, table.bnkx td {
+      padding: 14px 18px;
+      border-bottom: 1px solid rgba(212,175,55,.25);
       text-align: left;
     }
-    .disclaimer {
-      margin-top: 80px;
-      font-size: 12px;
-      color: #777;
-      text-align: center;
-      padding: 0 20px 40px;
+    table.bnkx thead th {
+      background:#1a1a1a;
+      text-align:center;
+      font-size: 22px;
     }
-    .social {
-      margin-top: 40px;
-      font-size: 20px;
-    }
-    .social a {
-      color: #d4af37;
-      text-decoration: none;
-    }
-    .social a:hover {
-      text-decoration: underline;
-    }
+    table.bnkx tr:last-child td { border-bottom: none; }
 
     /* === BIG BNKX Buy Button === */
+    .buy-wrap {
+      display:flex; flex-direction:column; align-items:center;
+      gap:14px; margin: 8px 0 8px;
+    }
     .bnkx-buy-btn {
       display:inline-flex;
       align-items:center;
       gap:1rem;
-      padding:1.4rem 2.4rem;
+      padding:1.3rem 2.3rem;
       border-radius:999px;
       background:linear-gradient(135deg,#c9a646,#f5d06f 45%,#b9902e);
       color:#111;
       font-weight:800;
       text-decoration:none;
-      box-shadow:0 0 25px rgba(245,208,111,.65), inset 0 1px 0 rgba(255,255,255,.45);
-      border:2px solid rgba(185,144,46,.85);
+      box-shadow:0 0 26px rgba(245,208,111,.7), inset 0 1px 0 rgba(255,255,255,.45);
+      border:2px solid rgba(185,144,46,.9);
       transition:transform .15s ease, box-shadow .15s ease, filter .15s ease;
       letter-spacing:.5px;
       font-size:28px;
-      margin-top:30px;
       animation: glowPulse 2.5s infinite;
     }
     .bnkx-buy-btn:hover {
       transform:scale(1.05);
-      filter:saturate(1.1);
-      box-shadow:0 0 40px rgba(245,208,111,.85);
+      filter:saturate(1.08);
+      box-shadow:0 0 42px rgba(245,208,111,.95);
     }
-    .bnkx-icon {
-      font-size:2rem;
-      filter:drop-shadow(0 1px 0 rgba(0,0,0,.25));
-    }
+    .bnkx-icon { font-size:2rem; filter:drop-shadow(0 1px 0 rgba(0,0,0,.25)); }
 
     @keyframes glowPulse {
-      0% { box-shadow: 0 0 25px rgba(245,208,111,0.5); }
-      50% { box-shadow: 0 0 45px rgba(245,208,111,0.9); }
-      100% { box-shadow: 0 0 25px rgba(245,208,111,0.5); }
+      0% { box-shadow: 0 0 26px rgba(245,208,111,0.55); }
+      50% { box-shadow: 0 0 48px rgba(245,208,111,0.95); }
+      100% { box-shadow: 0 0 26px rgba(245,208,111,0.55); }
+    }
+
+    /* === Swap Iframe === */
+    .swap-frame {
+      width:100%;
+      max-width: 520px;
+      height: 680px;
+      border:2px solid var(--gold);
+      border-radius:16px;
+      box-shadow:0 0 26px rgba(212,175,55,.55);
+      background: var(--card);
     }
 
     /* === Coinsniper Widget === */
     #cs-widget {
-      margin-top: 50px;
-      border: 2px solid #d4af37;
-      padding: 25px;
-      border-radius: 15px;
-      background: #111;
-      box-shadow: 0 0 25px rgba(212,175,55,0.5);
-      max-width: 500px;
+      margin-top: 46px;
+      border: 2px solid var(--gold);
+      padding: 22px;
+      border-radius: 14px;
+      background: var(--card);
+      box-shadow: 0 0 24px rgba(212,175,55,0.5);
+      max-width: 520px;
       width: 100%;
+      margin-left:auto; margin-right:auto;
+    }
+
+    .disclaimer {
+      margin-top: 70px;
+      font-size: 12px;
+      color: #777;
+      text-align: center;
+      padding: 0 20px 36px;
+    }
+    .social {
+      margin-top: 36px;
+      font-size: 20px;
+    }
+    .social a {
+      color: var(--gold);
+      text-decoration: none;
+    }
+    .social a:hover { text-decoration: underline; }
+
+    footer {
+      background-color: #111;
+      color: #777;
+      padding: 30px 20px;
+      margin-top: 70px;
+      font-size: 14px;
+      text-align: center;
+    }
+
+    /* Mobile tweaks */
+    @media (max-width:560px){
+      h1{font-size:34px}
+      .bnkx-buy-btn{font-size:24px; padding:1.1rem 1.8rem}
+      img{width:220px}
+      .swap-frame{height:640px}
     }
   </style>
 </head>
@@ -173,14 +215,54 @@
   <div class="container">
     <img src="logo.png" alt="BNKX Official Logo">
     <h1>BNKX is Reaching New Heights</h1>
-    <p>The future of digital finance begins here. Affordable, accessible, and ambitious – just like you.</p>
+    <p>The future of digital finance begins here. Affordable, accessible, and ambitious — just like you.</p>
 
     <!-- 🔥 BIG BUY BNKX Button -->
-    <a class="bnkx-buy-btn" 
-       href="https://pancakeswap.finance/swap?inputCurrency=0xfd73cCF13F1DAaFb807FAdf03Cef21ef06aC8f63&outputCurrency=0x55d398326f99059fF775485246999027B3197955" 
-       target="_blank" rel="noopener noreferrer">
-       <span class="bnkx-icon">🟡</span> Buy <strong>BNKX</strong>
-    </a>
+    <div class="buy-wrap">
+      <a class="bnkx-buy-btn" 
+        href="https://pancakeswap.finance/swap?inputCurrency=0xfd73cCF13F1DAaFb807FAdf03Cef21ef06aC8f63&outputCurrency=0x55d398326f99059fF775485246999027B3197955&chain=bsc" 
+        target="_blank" rel="noopener noreferrer" aria-label="Buy BNKX on PancakeSwap">
+        <span class="bnkx-icon">🟡</span> Buy <strong>BNKX</strong>
+      </a>
+    </div>
+
+    <!-- 🧾 Compact BNKX Buy Info Table -->
+    <table class="bnkx" aria-label="BNKX Quick Buy Information">
+      <thead>
+        <tr><th colspan="2">Buy BNKX — Quick Info</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Token</td>
+          <td>BNKX</td>
+        </tr>
+        <tr>
+          <td>Network</td>
+          <td>BSC (BEP-20)</td>
+        </tr>
+        <tr>
+          <td>Swap Pair</td>
+          <td>BNKX / USDT</td>
+        </tr>
+        <tr>
+          <td>Contract</td>
+          <td><a href="https://bscscan.com/address/0xfd73cCF13F1DAaFb807FAdf03Cef21ef06aC8f63" target="_blank" style="color:var(--gold); text-decoration:underline;">View on BscScan</a></td>
+        </tr>
+        <tr>
+          <td>Tip</td>
+          <td>Use MetaMask/Trust Wallet on BSC. Adjust slippage if needed.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- 🟡 Embedded PancakeSwap Swap Widget -->
+    <iframe
+      class="swap-frame"
+      title="PancakeSwap - Swap BNKX"
+      src="https://pancakeswap.finance/swap?inputCurrency=0xfd73cCF13F1DAaFb807FAdf03Cef21ef06aC8f63&outputCurrency=0x55d398326f99059fF775485246999027B3197955&chain=bsc"
+      allow="clipboard-read; clipboard-write; web-share; accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+      referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
 
     <!-- 🟡 Coinsniper Widget -->
     <div id="cs-widget" data-id="86662" data-name="BNKX"></div>
@@ -190,13 +272,13 @@
     <h2>About BNKX</h2>
     <p>BNKX is a bold and visionary meme token born on the Binance Smart Chain. Built for a new generation of digital finance believers, BNKX combines scarcity, community, and simplicity.</p>
     <p><strong>Token Symbol:</strong> BNKX</p>
-    <p><strong>Smart Contract:</strong> <a href="https://bscscan.com/address/0xfd73cCF13F1DAaFb807FAdf03Cef21ef06aC8f63" target="_blank" style="color:#d4af37; text-decoration: underline;">0xfd73cCF13F1DAaFb807FAdf03Cef21ef06aC8f63</a></p>
+    <p><strong>Smart Contract:</strong> <a href="https://bscscan.com/address/0xfd73cCF13F1DAaFb807FAdf03Cef21ef06aC8f63" target="_blank" style="color:var(--gold); text-decoration: underline;">0xfd73cCF13F1DAaFb807FAdf03Cef21ef06aC8f63</a></p>
   </section>
 
   <section id="tokenomics">
     <h2>Tokenomics</h2>
     <p>A total of 600 million tokens have been allocated as follows:</p>
-    <table>
+    <table class="bnkx">
       <thead><tr><th>Category</th><th>Amount</th><th>Percentage</th></tr></thead>
       <tbody>
         <tr><td>Presale</td><td>300,000,000</td><td>50%</td></tr>
@@ -206,30 +288,29 @@
         <tr><td>Team & Reserves</td><td>40,000,000</td><td>6.67%</td></tr>
       </tbody>
     </table>
-    <img src="tokenomics-chart.png" alt="Tokenomics Chart" style="max-width: 400px; width: 100%; margin-bottom: 40px;">
+    <img src="tokenomics-chart.png" alt="Tokenomics Chart" style="max-width: 520px; width: 100%; margin-bottom: 32px;">
   </section>
 
   <section id="roadmap">
     <h2>Roadmap</h2>
-    <div style="text-align: left; max-width: 700px; margin: 0 auto;">
-      <div style="margin-bottom: 30px;">
-        <h3 style="color: #d4af37;">Q2 2025</h3>
+    <div style="text-align: left; max-width: 760px; margin: 0 auto;">
+      <div style="margin-bottom: 22px;">
+        <h3 style="color: var(--gold);">Q2 2025</h3>
         <ul>
           <li>Project launch and branding</li>
           <li>Website & social media presence</li>
           <li>Smart contract deployment and verification</li>
         </ul>
       </div>
-      <div style="margin-bottom: 30px;">
-        <h3 style="color: #d4af37;">Q3–Q4 2025</h3>
+      <div style="margin-bottom: 22px;">
+        <h3 style="color: var(--gold);">Q3–Q4 2025</h3>
         <ul>
-          <li>Public presale via PinkSale</li>
           <li>Marketing campaigns and partnerships</li>
           <li>Community growth initiatives</li>
         </ul>
       </div>
-      <div style="margin-bottom: 30px;">
-        <h3 style="color: #d4af37;">Q4 2025 – Q1 2026</h3>
+      <div style="margin-bottom: 22px;">
+        <h3 style="color: var(--gold);">Q4 2025 – Q1 2026</h3>
         <ul>
           <li>Token listing on PancakeSwap</li>
           <li>Liquidity lock and tracking</li>
@@ -249,32 +330,32 @@
 
   <section id="faq">
     <h2>Frequently Asked Questions (FAQ)</h2>
-    <div style="text-align: left; max-width: 700px; margin: 0 auto;">
-      <div style="margin-bottom: 25px;"><strong style="color: #d4af37;">What is BNKX?</strong><p>BNKX is a meme token built on Binance Smart Chain (BEP-20) designed to combine meme culture, fair tokenomics, and financial opportunity.</p></div>
-      <div style="margin-bottom: 25px;"><strong style="color: #d4af37;">Is BNKX audited?</strong><p>The smart contract is verified on BscScan, and audit steps are being planned before listing.</p></div>
-      <div style="margin-bottom: 25px;"><strong style="color: #d4af37;">When will BNKX launch?</strong><p>Follow our Telegram and Twitter for official updates.</p></div>
-      <div style="margin-bottom: 25px;"><strong style="color: #d4af37;">Which wallet do I need?</strong><p>You need a wallet that supports BSC and BEP-20 tokens like MetaMask or Trust Wallet.</p></div>
-      <div style="margin-bottom: 25px;"><strong style="color: #d4af37;">How to buy BNKX?</strong><p>You can easily buy BNKX on PancakeSwap using the Buy BNKX button above.</p></div>
+    <div style="text-align: left; max-width: 760px; margin: 0 auto;">
+      <div style="margin-bottom: 18px;"><strong style="color: var(--gold);">What is BNKX?</strong><p>BNKX is a meme token built on BSC (BEP-20) designed to combine meme culture, fair tokenomics, and community-driven momentum.</p></div>
+      <div style="margin-bottom: 18px;"><strong style="color: var(--gold);">Is BNKX audited?</strong><p>The smart contract is verified on BscScan. Audit steps are planned before broader listings.</p></div>
+      <div style="margin-bottom: 18px;"><strong style="color: var(--gold);">How do I buy BNKX?</strong><p>Use the big <em>Buy BNKX</em> button or the embedded swap widget above to purchase via PancakeSwap (BNKX/USDT) using MetaMask or Trust Wallet.</p></div>
+      <div style="margin-bottom: 18px;"><strong style="color: var(--gold);">Which network should my wallet use?</strong><p>Binance Smart Chain (BSC). Ensure you’re on the BSC network in your wallet.</p></div>
+      <div style="margin-bottom: 18px;"><strong style="color: var(--gold);">Slippage?</strong><p>Start low; if a transaction fails, slightly increase slippage until it succeeds.</p></div>
     </div>
   </section>
 
   <div class="social">
     <a href="https://twitter.com/BNKX_Official" target="_blank">@BNKX_Official</a>
-    <p style="margin-top: 30px; font-size: 18px;">📧 Official Contact: <a href="mailto:bnkx@mail.com" style="color:#d4af37;">bnkx@mail.com</a></p>
+    <p style="margin-top: 22px; font-size: 18px;">📧 Official Contact: <a href="mailto:bnkx@mail.com" style="color:var(--gold);">bnkx@mail.com</a></p>
   </div>
 
-  <img src="https://bnkx.net/logo-32.svg" alt="BNKX Logo 32x32" style="margin: 40px auto; width: 32px; height: 32px; display: block;">
+  <img src="https://bnkx.net/logo-32.svg" alt="BNKX Logo 32x32" style="margin: 36px auto; width: 32px; height: 32px; display: block;">
 
   <div class="disclaimer">
     BNKX is a community-driven token created for experimental and educational purposes only. This is not financial advice. Please DYOR.
   </div>
 
-  <footer style="background-color: #111; color: #777; padding: 30px 20px; margin-top: 80px; font-size: 14px; text-align: center;">
+  <footer>
     <div style="margin-bottom: 10px;">
-      <a href="https://bnkx.net" style="color: #d4af37; text-decoration: none; margin: 0 10px;">Website</a>
-      <a href="https://twitter.com/BNKX_Official" target="_blank" style="color: #d4af37; text-decoration: none; margin: 0 10px;">Twitter</a>
-      <a href="https://t.me/BNKX_Community" target="_blank" style="color: #d4af37; text-decoration: none; margin: 0 10px;">Telegram</a>
-      <a href="mailto:bnkx@mail.com" style="color: #d4af37; text-decoration: none; margin: 0 10px;">Email</a>
+      <a href="https://bnkx.net" style="color: var(--gold); text-decoration: none; margin: 0 10px;">Website</a>
+      <a href="https://twitter.com/BNKX_Official" target="_blank" style="color: var(--gold); text-decoration: none; margin: 0 10px;">Twitter</a>
+      <a href="https://t.me/BNKX_Community" target="_blank" style="color: var(--gold); text-decoration: none; margin: 0 10px;">Telegram</a>
+      <a href="mailto:bnkx@mail.com" style="color: var(--gold); text-decoration: none; margin: 0 10px;">Email</a>
     </div>
     <div style="margin-top: 10px;">&copy; 2025 BNKX. All rights reserved. Built for the future of decentralized finance.</div>
   </footer>
