@@ -37,24 +37,24 @@
       text-decoration: underline;
     }
     .container {
-      max-width: 700px;
+      max-width: 800px;
       margin: 120px auto 0;
       display: flex;
       flex-direction: column;
       align-items: center;
     }
     img {
-      width: 220px;
-      margin-bottom: 20px;
+      width: 260px;
+      margin-bottom: 25px;
     }
     h1 {
-      font-size: 40px;
+      font-size: 44px;
       color: #d4af37;
-      margin-bottom: 10px;
+      margin-bottom: 20px;
     }
     p {
       color: #ccc;
-      font-size: 20px;
+      font-size: 22px;
       margin-bottom: 40px;
     }
     section {
@@ -106,40 +106,50 @@
     .social a:hover {
       text-decoration: underline;
     }
-    /* === BNKX Buy Button === */
+
+    /* === BIG BNKX Buy Button === */
     .bnkx-buy-btn {
       display:inline-flex;
       align-items:center;
-      gap:.6rem;
-      padding:.9rem 1.4rem;
+      gap:1rem;
+      padding:1.4rem 2.4rem;
       border-radius:999px;
       background:linear-gradient(135deg,#c9a646,#f5d06f 45%,#b9902e);
       color:#111;
-      font-weight:700;
+      font-weight:800;
       text-decoration:none;
-      box-shadow:0 6px 20px rgba(245,208,111,.35), inset 0 1px 0 rgba(255,255,255,.35);
-      border:1px solid rgba(185,144,46,.55);
+      box-shadow:0 0 25px rgba(245,208,111,.65), inset 0 1px 0 rgba(255,255,255,.45);
+      border:2px solid rgba(185,144,46,.85);
       transition:transform .15s ease, box-shadow .15s ease, filter .15s ease;
-      letter-spacing:.2px;
-      font-size:18px;
-      margin-top:20px;
+      letter-spacing:.5px;
+      font-size:28px;
+      margin-top:30px;
+      animation: glowPulse 2.5s infinite;
     }
     .bnkx-buy-btn:hover {
-      transform:translateY(-2px);
-      filter:saturate(1.08);
-      box-shadow:0 10px 26px rgba(245,208,111,.4), inset 0 1px 0 rgba(255,255,255,.45);
+      transform:scale(1.05);
+      filter:saturate(1.1);
+      box-shadow:0 0 40px rgba(245,208,111,.85);
     }
-    .bnkx-buy-btn:active { transform:translateY(0); }
-    .bnkx-icon { font-size:1.2rem; filter:drop-shadow(0 1px 0 rgba(0,0,0,.15)); }
+    .bnkx-icon {
+      font-size:2rem;
+      filter:drop-shadow(0 1px 0 rgba(0,0,0,.25));
+    }
+
+    @keyframes glowPulse {
+      0% { box-shadow: 0 0 25px rgba(245,208,111,0.5); }
+      50% { box-shadow: 0 0 45px rgba(245,208,111,0.9); }
+      100% { box-shadow: 0 0 25px rgba(245,208,111,0.5); }
+    }
 
     /* === Coinsniper Widget === */
     #cs-widget {
-      margin-top: 40px;
-      border: 1px solid #d4af37;
-      padding: 20px;
-      border-radius: 10px;
+      margin-top: 50px;
+      border: 2px solid #d4af37;
+      padding: 25px;
+      border-radius: 15px;
       background: #111;
-      box-shadow: 0 0 20px rgba(212,175,55,0.3);
+      box-shadow: 0 0 25px rgba(212,175,55,0.5);
       max-width: 500px;
       width: 100%;
     }
@@ -165,7 +175,7 @@
     <h1>BNKX is Reaching New Heights</h1>
     <p>The future of digital finance begins here. Affordable, accessible, and ambitious – just like you.</p>
 
-    <!-- Buy BNKX Button -->
+    <!-- 🔥 BIG BUY BNKX Button -->
     <a class="bnkx-buy-btn" 
        href="https://pancakeswap.finance/swap?inputCurrency=0xfd73cCF13F1DAaFb807FAdf03Cef21ef06aC8f63&outputCurrency=0x55d398326f99059fF775485246999027B3197955" 
        target="_blank" rel="noopener noreferrer">
@@ -242,9 +252,9 @@
     <div style="text-align: left; max-width: 700px; margin: 0 auto;">
       <div style="margin-bottom: 25px;"><strong style="color: #d4af37;">What is BNKX?</strong><p>BNKX is a meme token built on Binance Smart Chain (BEP-20) designed to combine meme culture, fair tokenomics, and financial opportunity.</p></div>
       <div style="margin-bottom: 25px;"><strong style="color: #d4af37;">Is BNKX audited?</strong><p>The smart contract is verified on BscScan, and audit steps are being planned before listing.</p></div>
-      <div style="margin-bottom: 25px;"><strong style="color: #d4af37;">When will BNKX launch on PinkSale?</strong><p>The presale is scheduled as TBA – follow our Telegram and Twitter for updates.</p></div>
-      <div style="margin-bottom: 25px;"><strong style="color: #d4af37;">Which wallet do I need to participate?</strong><p>You need a wallet that supports BSC and BEP-20 tokens like MetaMask or Trust Wallet.</p></div>
-      <div style="margin-bottom: 25px;"><strong style="color: #d4af37;">How to buy BNKX in the presale?</strong><p>Once live, the PinkSale page will allow you to connect your wallet and purchase using USDT (BEP-20).</p></div>
+      <div style="margin-bottom: 25px;"><strong style="color: #d4af37;">When will BNKX launch?</strong><p>Follow our Telegram and Twitter for official updates.</p></div>
+      <div style="margin-bottom: 25px;"><strong style="color: #d4af37;">Which wallet do I need?</strong><p>You need a wallet that supports BSC and BEP-20 tokens like MetaMask or Trust Wallet.</p></div>
+      <div style="margin-bottom: 25px;"><strong style="color: #d4af37;">How to buy BNKX?</strong><p>You can easily buy BNKX on PancakeSwap using the Buy BNKX button above.</p></div>
     </div>
   </section>
 
