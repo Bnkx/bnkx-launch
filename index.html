@@ -11,7 +11,6 @@
   :root{
     --bg:#000; --panel:#0f0f0f; --panel-2:#0b0b0b;
     --gold:#d4af37; --gold-2:#f5d06f; --text:#e9e9e9; --muted:#b8b8b8; --line:#1e1e1e;
-    --ok:#39d98a; --warn:#ffca5f; --bad:#ff7575;
   }
   *{box-sizing:border-box}
   html,body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,Segoe UI,Roboto,Arial,sans-serif}
@@ -158,14 +157,20 @@
 <section id="chart">
   <div class="container">
     <h2>BNKX Live Chart</h2>
-    <p style="color:#ccc">Real-time price, liquidity and trades powered by DEXTools.</p>
-    <div style="border:2px solid var(--gold);border-radius:14px;overflow:hidden">
+    <p style="color:#ccc">Real-time BNKX/USDT price, liquidity and trades powered by DEXTools.</p>
+    <div style="border:2px solid #d4af37;border-radius:12px;overflow:hidden;">
       <iframe
-        title="BNKX DEXTools Chart"
-        width="100%" height="520" frameborder="0" style="border:0;"
-        src="https://www.dextools.io/widget-chart/en/bnb/pe-dark/0x7b5c735f56377036f1da2be914b1438728de7ca9?theme=dark&chartType=2&chartResolution=30&drawingToolbars=false">
+        title="BNKX DEXTools Live Chart"
+        width="100%"
+        height="520"
+        frameborder="0"
+        style="border:0;"
+        src="https://www.dextools.io/widget-chart/en/bnb/pancakeswapv2/0x7b5c735f56377036f1da2be914b1438728de7ca9?theme=dark&chartType=2&chartResolution=30&drawingToolbars=false">
       </iframe>
     </div>
+    <p style="margin-top:10px;color:#8e8e8e;font-size:13px">
+      If the chart doesn't load, <a href="https://www.dextools.io/app/en/bnb/pair-explorer/0x7b5c735f56377036f1da2be914b1438728de7ca9" target="_blank">open on DEXTools</a>.
+    </p>
   </div>
 </section>
 
@@ -174,30 +179,12 @@
   <div class="container">
     <h2>Tokenomics</h2>
     <div class="cols">
-      <div class="card">
-        <h3>Supply</h3>
-        <p><b>600,000,000</b> BNKX</p>
-      </div>
-      <div class="card">
-        <h3>Presale</h3>
-        <p>50% — 300,000,000 BNKX</p>
-      </div>
-      <div class="card">
-        <h3>Liquidity</h3>
-        <p>30% — 180,000,000 BNKX (LP lock 90 days)</p>
-      </div>
-      <div class="card">
-        <h3>Marketing</h3>
-        <p>6.67% — 40,000,000 BNKX</p>
-      </div>
-      <div class="card">
-        <h3>Development</h3>
-        <p>6.67% — 40,000,000 BNKX</p>
-      </div>
-      <div class="card">
-        <h3>Team & Reserves</h3>
-        <p>6.67% — 40,000,000 BNKX</p>
-      </div>
+      <div class="card"><h3>Supply</h3><p><b>600,000,000</b> BNKX</p></div>
+      <div class="card"><h3>Presale</h3><p>50% — 300,000,000 BNKX</p></div>
+      <div class="card"><h3>Liquidity</h3><p>30% — 180,000,000 BNKX (LP lock 90 days)</p></div>
+      <div class="card"><h3>Marketing</h3><p>6.67% — 40,000,000 BNKX</p></div>
+      <div class="card"><h3>Development</h3><p>6.67% — 40,000,000 BNKX</p></div>
+      <div class="card"><h3>Team & Reserves</h3><p>6.67% — 40,000,000 BNKX</p></div>
     </div>
   </div>
 </section>
@@ -239,7 +226,7 @@
     <div class="foot-links">
       <a class="badge" href="https://t.me/BNKX_Community" target="_blank">Telegram</a>
       <a class="badge" href="https://x.com/BNKX_Official" target="_blank">X (Twitter)</a>
-      <a class="badge" href="mailto:bnkx@mail.com">E-mail</a>
+      <a class="badge" href="mailto:info@bnkx.net">info@bnkx.net</a>
       <a class="badge" href="https://bnkx.net/Whitepaper.pdf" target="_blank">Whitepaper (PDF)</a>
     </div>
     <p style="text-align:center;margin:16px 0 0;color:#8e8e8e">
@@ -252,9 +239,9 @@
   // Copy contract chip
   const fullAddr = '0xfd73cCF13F1DAaFb807FAdf03Cef21ef06aC8f63';
   document.getElementById('addrChip').addEventListener('click', async () => {
-    try{ await navigator.clipboard.writeText(fullAddr);
+    try{
+      await navigator.clipboard.writeText(fullAddr);
       const el = document.getElementById('addrChip');
-      const old = el.textContent.trim();
       el.textContent='Copied!';
       setTimeout(()=>el.textContent='0xfd73c...c8f63',1200);
     }catch(e){ alert(fullAddr); }
