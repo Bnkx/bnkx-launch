@@ -39,9 +39,8 @@
       color: var(--gold);
       text-decoration: none;
     }
-    nav a:hover {
-      text-decoration: underline;
-    }
+    nav a:hover { text-decoration: underline; }
+
     .container {
       max-width: 900px;
       margin: 120px auto 0;
@@ -64,44 +63,6 @@
       margin: 0 0 28px;
       max-width: 760px;
     }
-    section {
-      padding: 0 18px;
-    }
-    section h2 {
-      font-size: 32px;
-      margin: 30px 0 16px;
-    }
-    section p, ul {
-      font-size: 20px;
-      color: #ccc;
-      max-width: 760px;
-      margin: 0 auto 32px;
-      text-align: left;
-    }
-    table.bnkx {
-      margin: 24px auto 28px;
-      color: var(--gold);
-      font-size: 18px;
-      border-collapse: collapse;
-      width: 100%;
-      max-width: 520px;
-      background: var(--card);
-      border: 2px solid var(--gold);
-      border-radius: 14px;
-      overflow: hidden;
-      box-shadow: 0 0 24px rgba(212,175,55,.45);
-    }
-    table.bnkx th, table.bnkx td {
-      padding: 14px 18px;
-      border-bottom: 1px solid rgba(212,175,55,.25);
-      text-align: left;
-    }
-    table.bnkx thead th {
-      background:#1a1a1a;
-      text-align:center;
-      font-size: 22px;
-    }
-    table.bnkx tr:last-child td { border-bottom: none; }
 
     /* === BIG BNKX Buy Button === */
     .buy-wrap {
@@ -147,6 +108,7 @@
       border-radius:16px;
       box-shadow:0 0 26px rgba(212,175,55,.55);
       background: var(--card);
+      margin-top: 20px;
     }
 
     /* === Coinsniper Widget === */
@@ -160,6 +122,33 @@
       max-width: 520px;
       width: 100%;
       margin-left:auto; margin-right:auto;
+    }
+
+    section { padding: 0 18px; }
+    section h2 { font-size: 32px; margin: 30px 0 16px; }
+    section p, ul {
+      font-size: 20px;
+      color: #ccc;
+      max-width: 760px;
+      margin: 0 auto 32px;
+      text-align: left;
+    }
+
+    table {
+      margin: 0 auto 40px;
+      color: var(--gold);
+      font-size: 18px;
+      border-collapse: collapse;
+      width: 100%;
+      max-width: 700px;
+    }
+    table th, table td {
+      padding: 12px 20px;
+      border: 1px solid var(--gold);
+    }
+    table th {
+      background-color: #111;
+      text-align: left;
     }
 
     .disclaimer {
@@ -188,7 +177,6 @@
       text-align: center;
     }
 
-    /* Mobile tweaks */
     @media (max-width:560px){
       h1{font-size:34px}
       .bnkx-buy-btn{font-size:24px; padding:1.1rem 1.8rem}
@@ -221,39 +209,10 @@
     <div class="buy-wrap">
       <a class="bnkx-buy-btn" 
         href="https://pancakeswap.finance/swap?inputCurrency=0xfd73cCF13F1DAaFb807FAdf03Cef21ef06aC8f63&outputCurrency=0x55d398326f99059fF775485246999027B3197955&chain=bsc" 
-        target="_blank" rel="noopener noreferrer" aria-label="Buy BNKX on PancakeSwap">
+        target="_blank" rel="noopener noreferrer">
         <span class="bnkx-icon">🟡</span> Buy <strong>BNKX</strong>
       </a>
     </div>
-
-    <!-- 🧾 Compact BNKX Buy Info Table -->
-    <table class="bnkx" aria-label="BNKX Quick Buy Information">
-      <thead>
-        <tr><th colspan="2">Buy BNKX — Quick Info</th></tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Token</td>
-          <td>BNKX</td>
-        </tr>
-        <tr>
-          <td>Network</td>
-          <td>BSC (BEP-20)</td>
-        </tr>
-        <tr>
-          <td>Swap Pair</td>
-          <td>BNKX / USDT</td>
-        </tr>
-        <tr>
-          <td>Contract</td>
-          <td><a href="https://bscscan.com/address/0xfd73cCF13F1DAaFb807FAdf03Cef21ef06aC8f63" target="_blank" style="color:var(--gold); text-decoration:underline;">View on BscScan</a></td>
-        </tr>
-        <tr>
-          <td>Tip</td>
-          <td>Use MetaMask/Trust Wallet on BSC. Adjust slippage if needed.</td>
-        </tr>
-      </tbody>
-    </table>
 
     <!-- 🟡 Embedded PancakeSwap Swap Widget -->
     <iframe
@@ -278,7 +237,7 @@
   <section id="tokenomics">
     <h2>Tokenomics</h2>
     <p>A total of 600 million tokens have been allocated as follows:</p>
-    <table class="bnkx">
+    <table>
       <thead><tr><th>Category</th><th>Amount</th><th>Percentage</th></tr></thead>
       <tbody>
         <tr><td>Presale</td><td>300,000,000</td><td>50%</td></tr>
