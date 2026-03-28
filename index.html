@@ -3,282 +3,699 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>BNKX — Be Early. Be Bold. Be BNKX.</title>
-  <meta name="description" content="BNKX is a bold, community-driven meme token on BNB Smart Chain. Be Early. Be Bold. Be BNKX.">
-  <link rel="icon" href="https://bnkx.net/logo-32.svg">
+  <title>BNKX — Official Links, Live Trading & Community</title>
+  <meta name="description" content="Official BNKX website with live trading, token information, official links, community channels, and how to buy on BNB Smart Chain." />
+  <link rel="icon" href="https://bnkx.net/logo-32.svg" />
   <style>
     :root{
-      --bg:#000; --panel:#0f0f0f; --panel-2:#0b0b0b;
-      --gold:#d4af37; --gold-2:#f5d06f; --text:#e9e9e9; --muted:#b8b8b8; --line:#1e1e1e;
+      --bg:#050505;
+      --bg-2:#0b0b0b;
+      --panel:#101010;
+      --panel-2:#151515;
+      --gold:#d4af37;
+      --gold-2:#f3d06d;
+      --text:#f2f2f2;
+      --muted:#b8b8b8;
+      --line:#232323;
+      --success:#b8f28a;
+      --radius:20px;
+      --shadow:0 18px 60px rgba(0,0,0,.45);
     }
+
     *{box-sizing:border-box}
-    html,body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,Segoe UI,Roboto,Arial,sans-serif}
-    a{color:var(--gold);text-decoration:none}
-    a:hover{text-decoration:underline}
-    .container{max-width:1140px;margin:auto;padding:0 20px}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:Inter,system-ui,Segoe UI,Roboto,Arial,sans-serif;
+      background:
+        radial-gradient(circle at top, rgba(212,175,55,.10), transparent 30%),
+        linear-gradient(180deg,#090909 0%, #040404 100%);
+      color:var(--text);
+    }
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
+    .container{max-width:1180px;margin:auto;padding:0 20px}
+    .muted{color:var(--muted)}
+    .gold{color:var(--gold)}
 
     /* Top bar */
-    .topbar{background:linear-gradient(90deg,#131313,transparent);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:50}
-    .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0;gap:16px}
-    .brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:.3px}
-    .brand img{width:32px;height:32px}
-    .links{display:flex;gap:18px;flex-wrap:wrap}
-    .links a{color:var(--text);opacity:.9}
-    .links a:hover{color:var(--gold)}
-    .cta-mini{display:flex;gap:10px;flex-wrap:wrap}
-    .btn,button{cursor:pointer;border:0}
+    .topbar{
+      position:sticky;
+      top:0;
+      z-index:100;
+      backdrop-filter:blur(14px);
+      background:rgba(6,6,6,.82);
+      border-bottom:1px solid rgba(255,255,255,.05);
+    }
+    .nav{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:20px;
+      padding:14px 0;
+    }
+    .brand{display:flex;align-items:center;gap:12px;font-weight:800;letter-spacing:.3px}
+    .brand img{width:38px;height:38px}
+    .nav-links{display:flex;gap:18px;flex-wrap:wrap}
+    .nav-links a{color:#ddd;font-weight:600;opacity:.9}
+    .nav-links a:hover{color:var(--gold)}
+    .nav-cta{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+    .menu-btn{display:none}
+
     .btn{
-      display:inline-flex;align-items:center;gap:.5rem;padding:.75rem 1.1rem;border-radius:999px;
-      font-weight:700;background:var(--panel-2);color:var(--text);border:1px solid var(--line)
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:.55rem;
+      padding:.88rem 1.15rem;
+      border-radius:999px;
+      border:1px solid var(--line);
+      background:var(--panel);
+      color:var(--text);
+      font-weight:800;
+      cursor:pointer;
+      transition:.18s ease;
+      box-shadow:none;
     }
+    .btn:hover{transform:translateY(-1px);border-color:#333}
     .btn--gold{
-      background:linear-gradient(135deg,#c9a646,#f5d06f 45%,#b9902e);color:#111;border:1px solid rgba(185,144,46,.55);
-      box-shadow:0 8px 22px rgba(245,208,111,.25), inset 0 1px 0 rgba(255,255,255,.35)
+      color:#111;
+      background:linear-gradient(135deg,#bd9629 0%, #f1d06d 52%, #b18220 100%);
+      border:1px solid rgba(243,208,109,.35);
+      box-shadow:0 8px 24px rgba(212,175,55,.20), inset 0 1px 0 rgba(255,255,255,.34);
     }
-    .btn--ghost{background:transparent;border:1px solid var(--gold);color:var(--gold)}
-    .btn:hover{transform:translateY(-1px)}
-    .mobile{display:none}
-    @media (max-width:880px){ .links{display:none} .mobile{display:block} }
+    .btn--ghost{background:transparent;border:1px solid rgba(212,175,55,.45);color:var(--gold)}
+    .btn--block{width:100%}
 
     /* Hero */
-    .hero{padding:72px 0 36px;border-bottom:1px solid var(--line);background:radial-gradient(90% 100% at 50% 0%, #0a0a0a 0%, #000 60%)}
-    .hero-wrap{display:grid;grid-template-columns:1.3fr .7fr;gap:24px;align-items:center}
-    .hero h1{font-size:44px;line-height:1.07;margin:14px 0;color:var(--gold)}
-    .sub{color:#ccc;font-size:18px;margin-bottom:20px}
-    .chips{display:flex;gap:10px;flex-wrap:wrap;margin:14px 0 24px}
-    .chip{background:var(--panel);border:1px solid var(--line);padding:.55rem .8rem;border-radius:999px;font-weight:600;color:#ddd}
-    .chip--copy{display:inline-flex;align-items:center;gap:.5rem}
-    .hero-cta{display:flex;gap:12px;flex-wrap:wrap}
-    .logo-ring{display:grid;place-items:center}
-    .logo-ring .ring{
-      width:240px;height:240px;border-radius:50%;border:2px solid rgba(212,175,55,.35);
-      background:radial-gradient(70% 70% at 50% 50%, rgba(212,175,55,.08), transparent 60%);
-      box-shadow:0 0 120px rgba(212,175,55,.15) inset, 0 10px 50px rgba(212,175,55,.15)
+    .hero{padding:72px 0 38px;border-bottom:1px solid rgba(255,255,255,.04)}
+    .hero-grid{
+      display:grid;
+      grid-template-columns:1.18fr .82fr;
+      gap:28px;
+      align-items:center;
     }
-    .logo-ring img{width:120px;height:120px;filter:drop-shadow(0 3px 10px rgba(212,175,55,.25))}
-    @media (max-width:880px){ .hero-wrap{grid-template-columns:1fr} .logo-ring{order:-1} .hero{padding-top:56px} }
+    .eyebrow{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:10px 14px;
+      border:1px solid rgba(212,175,55,.22);
+      border-radius:999px;
+      background:rgba(212,175,55,.06);
+      color:#f4df9f;
+      font-weight:700;
+      font-size:14px;
+    }
+    h1{
+      margin:16px 0 12px;
+      font-size:54px;
+      line-height:1.02;
+      letter-spacing:-1.8px;
+    }
+    .hero p.lead{
+      font-size:19px;
+      line-height:1.7;
+      color:#d8d8d8;
+      max-width:680px;
+      margin:0 0 22px;
+    }
+    .hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:20px}
+    .mini-note{font-size:14px;color:#a8a8a8;margin-top:6px}
 
-    /* Stat strip */
-    .strip{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;padding:18px 0}
-    .tile{background:var(--panel);border:1px solid var(--line);padding:16px;border-radius:14px;text-align:center}
-    .tile small{color:var(--muted);display:block}
-    .tile b{font-size:20px}
-    @media (max-width:880px){ .strip{grid-template-columns:1fr} }
+    .hero-card{
+      background:linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.01));
+      border:1px solid rgba(255,255,255,.06);
+      border-radius:28px;
+      padding:24px;
+      box-shadow:var(--shadow);
+      position:relative;
+      overflow:hidden;
+    }
+    .hero-card:before{
+      content:"";
+      position:absolute;
+      inset:-20% auto auto -20%;
+      width:220px;height:220px;border-radius:50%;
+      background:radial-gradient(circle, rgba(212,175,55,.18), transparent 68%);
+      pointer-events:none;
+    }
+    .hero-logo{
+      width:86px;height:86px;border-radius:50%;
+      display:grid;place-items:center;
+      margin-bottom:18px;
+      background:radial-gradient(circle, rgba(212,175,55,.18), rgba(212,175,55,.04));
+      border:1px solid rgba(212,175,55,.25);
+    }
+    .hero-logo img{width:48px;height:48px}
+    .hero-card h3{margin:0 0 8px;font-size:22px}
+    .hero-card p{margin:0 0 16px;color:#cfcfcf;line-height:1.65}
+    .contract-box{
+      display:flex;align-items:center;justify-content:space-between;gap:12px;
+      background:#0b0b0b;border:1px solid var(--line);padding:14px;border-radius:16px;margin:16px 0;
+      font-size:14px;color:#ddd;word-break:break-all;
+    }
+    .chip-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+    .chip{
+      display:inline-flex;align-items:center;gap:8px;
+      padding:10px 14px;border-radius:999px;
+      background:#0d0d0d;border:1px solid var(--line);color:#ddd;font-weight:700;font-size:14px;
+    }
 
-    /* Section */
-    section{padding:56px 0;border-bottom:1px solid var(--line)}
-    h2{font-size:32px;color:var(--gold);margin:0 0 20px}
-    .cols{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-    @media (max-width:900px){ .cols{grid-template-columns:1fr} }
-    .card{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:18px}
-    .tokenomics .card h3{margin:0 0 6px}
-    .tokenomics .card p{margin:0;color:#ccc}
+    /* trust strip */
+    .trust-strip{padding:16px 0 0}
+    .stats{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:14px;
+    }
+    .stat{
+      background:linear-gradient(180deg,#111,#0c0c0c);
+      border:1px solid var(--line);
+      border-radius:18px;
+      padding:18px;
+    }
+    .stat small{display:block;color:#a9a9a9;margin-bottom:8px}
+    .stat b{font-size:21px}
 
-    /* Roadmap */
-    .timeline{position:relative;margin-left:6px}
-    .timeline:before{content:"";position:absolute;left:10px;top:0;bottom:0;width:2px;background:linear-gradient(#333,transparent)}
-    .step{position:relative;margin:18px 0 18px 34px}
-    .step:before{content:"";position:absolute;left:-28px;top:6px;width:14px;height:14px;border-radius:50%;background:var(--gold);box-shadow:0 0 0 4px rgba(212,175,55,.12)}
+    /* sections */
+    section{padding:72px 0;border-bottom:1px solid rgba(255,255,255,.04)}
+    .section-head{display:flex;justify-content:space-between;align-items:end;gap:20px;margin-bottom:26px}
+    .section-head h2{margin:0;font-size:36px;letter-spacing:-.9px}
+    .section-head p{margin:0;color:#bdbdbd;max-width:680px;line-height:1.7}
 
-    /* FAQ */
-    .faq details{background:var(--panel);border:1px solid var(--line);border-radius:12px;margin:10px 0;padding:14px}
-    .faq summary{cursor:pointer;font-weight:700}
-    .faq p{margin:.6rem 0 0;color:#ccc}
+    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+    .card{
+      background:linear-gradient(180deg,#111,#0c0c0c);
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      padding:22px;
+      box-shadow:var(--shadow);
+    }
+    .card h3{margin:0 0 10px;font-size:22px}
+    .card p{margin:0;color:#cdcdcd;line-height:1.7}
 
-    /* Footer */
-    footer{background:#0a0a0a;padding:40px 0;color:#aaa}
-    .foot-links{display:flex;gap:16px;flex-wrap:wrap;justify-content:center}
-    .badge{display:inline-flex;align-items:center;gap:.5rem;padding:.5rem .8rem;border-radius:10px;border:1px solid var(--line);background:var(--panel);color:#ddd}
-    .badge img{width:18px;height:18px}
+    /* official links section */
+    .official{
+      display:grid;
+      grid-template-columns:1.1fr .9fr;
+      gap:18px;
+      align-items:stretch;
+    }
+    .link-list{display:grid;gap:12px}
+    .link-item{
+      display:flex;align-items:center;justify-content:space-between;gap:16px;
+      padding:16px 18px;border-radius:16px;background:#0c0c0c;border:1px solid var(--line)
+    }
+    .link-item strong{display:block;margin-bottom:4px}
+    .link-item span{color:#b7b7b7;font-size:14px}
+    .mini-badge{color:var(--success);font-weight:800;font-size:13px}
+
+    /* how to buy */
+    .step{
+      position:relative;
+      padding-top:58px;
+    }
+    .step-no{
+      position:absolute;top:0;left:0;
+      width:40px;height:40px;border-radius:50%;
+      display:grid;place-items:center;font-weight:900;
+      background:linear-gradient(135deg,#c39d33,#f3d06d);
+      color:#111;
+      box-shadow:0 10px 24px rgba(212,175,55,.18);
+    }
+
+    /* live */
+    .live-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:18px}
+    .embed{
+      border:1px solid rgba(212,175,55,.24);
+      border-radius:22px;
+      overflow:hidden;
+      background:#000;
+      box-shadow:var(--shadow);
+    }
+    iframe{display:block;width:100%;border:0}
+
+    /* tokenomics */
+    .tok-card .value{display:block;font-size:28px;font-weight:900;margin:8px 0 6px;color:var(--gold-2)}
+    .tok-card .subv{color:#b9b9b9;font-size:14px}
+
+    /* roadmap */
+    .timeline{position:relative;padding-left:28px;display:grid;gap:18px}
+    .timeline:before{content:"";position:absolute;left:8px;top:6px;bottom:6px;width:2px;background:linear-gradient(var(--gold),transparent)}
+    .phase{position:relative;background:linear-gradient(180deg,#111,#0c0c0c);border:1px solid var(--line);border-radius:18px;padding:18px 18px 18px 22px}
+    .phase:before{content:"";position:absolute;left:-26px;top:24px;width:16px;height:16px;border-radius:50%;background:var(--gold);box-shadow:0 0 0 5px rgba(212,175,55,.12)}
+    .phase b{display:block;font-size:18px;margin-bottom:6px}
+    .phase p{margin:0;color:#cfcfcf;line-height:1.7}
+
+    /* faq */
+    .faq details{
+      background:linear-gradient(180deg,#111,#0d0d0d);
+      border:1px solid var(--line);
+      border-radius:16px;
+      padding:16px 18px;
+      margin-bottom:12px;
+    }
+    .faq summary{cursor:pointer;font-weight:800;list-style:none}
+    .faq summary::-webkit-details-marker{display:none}
+    .faq p{margin:10px 0 0;color:#cfcfcf;line-height:1.7}
+
+    /* CTA */
+    .cta-band{
+      background:linear-gradient(135deg, rgba(212,175,55,.10), rgba(255,255,255,.02));
+      border:1px solid rgba(212,175,55,.22);
+      border-radius:28px;
+      padding:28px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
+      flex-wrap:wrap;
+      box-shadow:var(--shadow);
+    }
+    .cta-band h3{margin:0 0 8px;font-size:30px}
+    .cta-band p{margin:0;color:#d6d6d6;max-width:700px;line-height:1.7}
+
+    /* footer */
+    footer{padding:42px 0 56px;background:#070707}
+    .footer-top{display:flex;justify-content:space-between;gap:20px;align-items:flex-start;flex-wrap:wrap;margin-bottom:18px}
+    .footer-brand{max-width:520px}
+    .footer-brand .brand{margin-bottom:12px}
+    .footer-links{display:flex;gap:10px;flex-wrap:wrap}
+    .foot-badge{padding:11px 14px;border-radius:999px;background:#0e0e0e;border:1px solid var(--line);color:#ddd;font-weight:700}
+    .foot-note{margin:0;color:#8f8f8f;line-height:1.7}
+
+    @media (max-width:980px){
+      .hero-grid,.official,.live-grid,.grid-2{grid-template-columns:1fr}
+      .grid-3,.stats{grid-template-columns:1fr 1fr}
+      h1{font-size:42px}
+    }
+    @media (max-width:760px){
+      .nav{align-items:flex-start}
+      .menu-btn{display:inline-flex}
+      .nav-links{display:none;flex-direction:column;width:100%;padding:10px 0}
+      .nav.open .nav-links{display:flex}
+      .nav-cta{display:none}
+      .grid-3,.stats{grid-template-columns:1fr}
+      h1{font-size:34px;letter-spacing:-1px}
+      .hero p.lead{font-size:17px}
+      .section-head{flex-direction:column;align-items:flex-start}
+      .cta-band h3{font-size:24px}
+      .contract-box{flex-direction:column;align-items:flex-start}
+    }
   </style>
 </head>
 <body>
+  <div class="topbar">
+    <div class="container nav" id="navWrap">
+      <a class="brand" href="#top">
+        <img src="https://bnkx.net/logo-32.svg" alt="BNKX Logo" />
+        <span>BNKX</span>
+      </a>
 
-<!-- Top Navigation -->
-<div class="topbar">
-  <div class="container nav">
-    <div class="brand">
-      <img src="https://bnkx.net/logo-32.svg" alt="BNKX Logo">
-      <span>BNKX</span>
-    </div>
+      <nav class="nav-links">
+        <a href="#official">Official Links</a>
+        <a href="#buy">How to Buy</a>
+        <a href="#live">Live Trading</a>
+        <a href="#tokenomics">Tokenomics</a>
+        <a href="#roadmap">Roadmap</a>
+        <a href="#faq">FAQ</a>
+      </nav>
 
-    <nav class="links">
-      <a href="#buy">Buy</a>
-      <a href="#live">Live</a>
-      <a href="#tokenomics">Tokenomics</a>
-      <a href="#roadmap">Roadmap</a>
-      <a href="#faq">FAQ</a>
-      <a href="https://bnkx.net/Whitepaper.pdf" target="_blank">Whitepaper</a>
-    </nav>
-
-    <div class="cta-mini">
-      <a class="btn btn--ghost" href="https://t.me/BNKX_Community" target="_blank">Telegram</a>
-      <a class="btn btn--gold" href="https://pancakeswap.finance/swap?outputCurrency=0xfd73cCF13F1DAaFb807FAdf03Cef21ef06aC8f63&chain=bsc" target="_blank">Buy BNKX</a>
-    </div>
-
-    <button class="btn mobile" onclick="document.querySelector('.links').style.display =
-      getComputedStyle(document.querySelector('.links')).display==='none'?'flex':'none'">Menu</button>
-  </div>
-</div>
-
-<!-- Hero -->
-<header class="hero" id="buy">
-  <div class="container hero-wrap">
-    <div>
-      <span class="chip">BNB Smart Chain (BEP-20)</span>
-      <h1>BNKX is Reaching New Heights</h1>
-      <p class="sub">🚀 BNKX is almost here. Affordable, accessible, and ambitious — just like you.</p>
-
-      <div class="chips">
-        <span class="chip chip--copy" id="addrChip" title="Click to copy">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M16 1H4a2 2 0 0 0-2 2v12h2V3h12V1zm3 4H8a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h11a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2zm0 16H8V7h11v14z"/></svg>
-          0xfd73c...c8f63
-        </span>
-        <a class="chip" href="https://bscscan.com/token/0xfd73cCF13F1DAaFb807FAdf03Cef21ef06aC8f63" target="_blank">View on BscScan</a>
-        <a class="chip" href="https://coinsniper.net/coin/86662" target="_blank">Vote on CoinSniper ⭐</a>
+      <div class="nav-cta">
+        <a class="btn btn--ghost" href="https://x.com/BNKX_Official" target="_blank" rel="noopener">X (Twitter)</a>
+        <a class="btn btn--gold" href="https://bnkx.net" target="_blank" rel="noopener">Official Website</a>
       </div>
 
-      <div class="hero-cta">
-        <a class="btn btn--gold" href="https://pancakeswap.finance/swap?outputCurrency=0xfd73cCF13F1DAaFb807FAdf03Cef21ef06aC8f63&chain=bsc" target="_blank">Buy on PancakeSwap</a>
-        <a class="btn" href="#live">View Live Trading</a>
-        <a class="btn" href="https://www.pinksale.finance/launchpad/bsc/0x30474a135F3f1F70699540c4a355CbdB1986249d" target="_blank">PinkSale (TBA)</a>
+      <button class="btn menu-btn" type="button" onclick="toggleMenu()">Menu</button>
+    </div>
+  </div>
+
+  <header class="hero" id="top">
+    <div class="container hero-grid">
+      <div>
+        <div class="eyebrow">BNB Smart Chain • Official BNKX Links Only</div>
+        <h1>BNKX is back with a cleaner, stronger presence.</h1>
+        <p class="lead">
+          Official access, live trading, and direct community channels — all in one place.
+          No confusion, no fake links, just the official BNKX path forward.
+        </p>
+
+        <div class="hero-actions">
+          <a class="btn btn--gold" href="#official">View Official Links</a>
+          <a class="btn" href="#live">View Live Trading</a>
+          <a class="btn" href="https://bnkx.net/Whitepaper.pdf" target="_blank" rel="noopener">Whitepaper</a>
+        </div>
+
+        <div class="chip-row">
+          <span class="chip">BEP-20</span>
+          <span class="chip">PancakeSwap V3</span>
+          <span class="chip">Official Contract Verified</span>
+        </div>
+
+        <p class="mini-note">Always use the official website and official contract address before interacting with BNKX.</p>
       </div>
 
-      <p style="margin-top:14px;color:#9e9e9e;font-size:14px">
-        Tip: Open the buy page, select USDT or your preferred token, then swap into BNKX.
-      </p>
+      <aside class="hero-card">
+        <div class="hero-logo">
+          <img src="https://bnkx.net/logo-32.svg" alt="BNKX" />
+        </div>
+        <h3>Official Contract</h3>
+        <p>Use only the verified BNKX token address below when checking wallets, charts, or trading pages.</p>
+
+        <div class="contract-box">
+          <span id="contractText">0xfd73cCF13F1DAaFb807FAdf03Cef21ef06aC8f63</span>
+          <button class="btn btn--ghost" type="button" onclick="copyContract()">Copy</button>
+        </div>
+
+        <div class="chip-row">
+          <a class="chip" href="https://bscscan.com/token/0xfd73cCF13F1DAaFb807FAdf03Cef21ef06aC8f63" target="_blank" rel="noopener">BscScan</a>
+          <a class="chip" href="https://www.dextools.io/app/en/bnb/pair-explorer/0x7b5c735f56377036f1da2be914b1438728de7ca9" target="_blank" rel="noopener">DEXTools</a>
+          <a class="chip" href="https://coinsniper.net/coin/86662" target="_blank" rel="noopener">CoinSniper</a>
+        </div>
+      </aside>
     </div>
 
-    <div class="logo-ring">
-      <div class="ring"><img src="https://bnkx.net/logo-32.svg" alt="BNKX" /></div>
-    </div>
-  </div>
-
-  <div class="container strip" aria-label="stats">
-    <div class="tile"><small>Liquidity</small><b>$325.51</b></div>
-    <div class="tile"><small>Pair</small><b>BNKX / USDT</b></div>
-    <div class="tile"><small>DEX</small><b>PancakeSwap V3</b></div>
-  </div>
-</header>
-
-<!-- Live Trading -->
-<section id="live" style="background:#000; padding:60px 0; text-align:center; color:#d4af37;">
-  <div class="container">
-    <h2 style="font-size:32px; margin-bottom:10px;">BNKX Live Trading</h2>
-    <p style="color:#ccc; margin-bottom:26px;">Real-time BNKX/USDT chart and instant swap powered by DEXTools.</p>
-
-    <!-- DEXTools Live Chart -->
-    <div style="border:2px solid #d4af37; border-radius:12px; overflow:hidden; margin-bottom:34px;">
-      <iframe
-        id="dextools-widget"
-        title="BNKX DEXTools Chart"
-        width="100%"
-        height="520"
-        frameborder="0"
-        style="border:0;"
-        src="https://www.dextools.io/widget-chart/en/bnb/pancakeswapv3/0x7b5c735f56377036f1da2be914b1438728de7ca9?theme=dark&chartType=2&chartResolution=30&drawingToolbars=false">
-      </iframe>
-    </div>
-
-    <!-- DEXTswap Aggregator -->
-    <h3 style="margin:0 0 16px;">Swap BNKX Instantly</h3>
-    <div style="display:flex; justify-content:center;">
-      <div style="border:2px solid #d4af37; border-radius:12px; overflow:hidden;">
-        <iframe
-          id="dextswap-aggregator-widget"
-          title="DEXTswap Aggregator"
-          width="400"
-          height="420"
-          frameborder="0"
-          style="border:0;"
-          src="https://www.dextools.io/widget-aggregator/en/swap/bnb/0xfd73ccf13f1daafb807fadf03cef21ef06ac8f63">
-        </iframe>
+    <div class="container trust-strip">
+      <div class="stats">
+        <div class="stat"><small>Network</small><b>BNB Smart Chain</b></div>
+        <div class="stat"><small>Pair</small><b>BNKX / USDT</b></div>
+        <div class="stat"><small>DEX</small><b>PancakeSwap V3</b></div>
+        <div class="stat"><small>Official Hub</small><b>bnkx.net</b></div>
       </div>
     </div>
+  </header>
 
-    <p style="color:#999; margin-top:18px; font-size:14px;">
-      Open directly in DEXTools:
-      <a href="https://www.dextools.io/app/en/bnb/pair-explorer/0x7b5c735f56377036f1da2be914b1438728de7ca9" target="_blank" style="color:#d4af37;">Pair Explorer</a>
-    </p>
-  </div>
-</section>
+  <section id="official">
+    <div class="container">
+      <div class="section-head">
+        <h2>Official Links</h2>
+        <p>
+          Keep everything centralized. This section makes it easy for visitors to find the official BNKX website,
+          social channels, whitepaper, and live trading pages without getting lost in duplicate token pages.
+        </p>
+      </div>
 
-<!-- Tokenomics -->
-<section id="tokenomics" class="tokenomics">
-  <div class="container">
-    <h2>Tokenomics</h2>
-    <div class="cols">
-      <div class="card"><h3>Supply</h3><p><b>600,000,000</b> BNKX</p></div>
-      <div class="card"><h3>Presale</h3><p>50% — 300,000,000 BNKX</p></div>
-      <div class="card"><h3>Liquidity</h3><p>30% — 180,000,000 BNKX (LP lock 90 days)</p></div>
-      <div class="card"><h3>Marketing</h3><p>6.67% — 40,000,000 BNKX</p></div>
-      <div class="card"><h3>Development</h3><p>6.67% — 40,000,000 BNKX</p></div>
-      <div class="card"><h3>Team & Reserves</h3><p>6.67% — 40,000,000 BNKX</p></div>
+      <div class="official">
+        <div class="card">
+          <div class="link-list">
+            <a class="link-item" href="https://bnkx.net" target="_blank" rel="noopener">
+              <div>
+                <strong>Official Website</strong>
+                <span>Main hub for all verified BNKX links and updates</span>
+              </div>
+              <span class="mini-badge">Official</span>
+            </a>
+
+            <a class="link-item" href="https://x.com/BNKX_Official" target="_blank" rel="noopener">
+              <div>
+                <strong>X (Twitter)</strong>
+                <span>Updates, announcements, and direct messages</span>
+              </div>
+              <span class="mini-badge">Official</span>
+            </a>
+
+            <a class="link-item" href="https://t.me/bnkx_channel" target="_blank" rel="noopener">
+              <div>
+                <strong>Telegram Channel</strong>
+                <span>Official broadcast channel for BNKX announcements</span>
+              </div>
+              <span class="mini-badge">Official</span>
+            </a>
+
+            <a class="link-item" href="https://t.me/BNKX_Community" target="_blank" rel="noopener">
+              <div>
+                <strong>Telegram Community</strong>
+                <span>Community presence and official brand touchpoint</span>
+              </div>
+              <span class="mini-badge">Official</span>
+            </a>
+
+            <a class="link-item" href="https://bnkx.net/Whitepaper.pdf" target="_blank" rel="noopener">
+              <div>
+                <strong>Whitepaper</strong>
+                <span>Read the BNKX overview and long-term direction</span>
+              </div>
+              <span class="mini-badge">PDF</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Why this layout works</h3>
+          <p>
+            Right now your site needs to do one job clearly: remove confusion. Visitors should instantly know where
+            the real BNKX lives, where to watch trading, and where to follow updates. This structure puts trust first,
+            then action.
+          </p>
+          <div class="chip-row" style="margin-top:18px">
+            <span class="chip">Official website first</span>
+            <span class="chip">Trading visible</span>
+            <span class="chip">Socials verified</span>
+            <span class="chip">Cleaner trust flow</span>
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- Roadmap -->
-<section id="roadmap">
-  <div class="container">
-    <h2>Roadmap</h2>
-    <div class="timeline">
-      <div class="step"><b>Q2 2025</b> — Branding, website, contract deployment & verification.</div>
-      <div class="step"><b>Q3–Q4 2025</b> — Public Presale (PinkSale), partnerships, community growth.</div>
-      <div class="step"><b>Q4 2025 – Q1 2026</b> — Listing on PancakeSwap, LP lock, staking & long-term roadmap.</div>
+  <section id="buy">
+    <div class="container">
+      <div class="section-head">
+        <h2>How to Buy BNKX</h2>
+        <p>
+          Keep the process simple. New visitors should understand how to get from wallet setup to completed swap in a few seconds.
+        </p>
+      </div>
+
+      <div class="grid-3">
+        <div class="card step">
+          <div class="step-no">1</div>
+          <h3>Connect Wallet</h3>
+          <p>Use a compatible wallet on BNB Smart Chain such as MetaMask or Trust Wallet.</p>
+        </div>
+
+        <div class="card step">
+          <div class="step-no">2</div>
+          <h3>Open Official Access</h3>
+          <p>Go through the official BNKX website so you always land on the right trading and chart pages.</p>
+        </div>
+
+        <div class="card step">
+          <div class="step-no">3</div>
+          <h3>Swap into BNKX</h3>
+          <p>Use PancakeSwap or the live swap widget below to exchange BNB or USDT into BNKX.</p>
+        </div>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- FAQ -->
-<section id="faq" class="faq">
-  <div class="container">
-    <h2>FAQ</h2>
+  <section id="live">
+    <div class="container">
+      <div class="section-head">
+        <h2>Live Trading</h2>
+        <p>
+          Show both the chart and the swap in one place. This makes the website feel active, practical, and ready for action.
+        </p>
+      </div>
 
-    <details>
-      <summary>What is BNKX?</summary>
-      <p>BNKX is a meme token on BNB Smart Chain (BEP-20) merging meme culture with fair tokenomics and DeFi accessibility.</p>
-    </details>
+      <div class="live-grid">
+        <div class="embed">
+          <iframe
+            title="BNKX DEXTools Chart"
+            height="560"
+            src="https://www.dextools.io/widget-chart/en/bnb/pancakeswapv3/0x7b5c735f56377036f1da2be914b1438728de7ca9?theme=dark&chartType=2&chartResolution=30&drawingToolbars=false">
+          </iframe>
+        </div>
 
-    <details>
-      <summary>How do I buy BNKX?</summary>
-      <p>Open the PancakeSwap buy page, choose USDT or another supported token, enter your amount, and confirm the swap into BNKX.</p>
-    </details>
+        <div class="card">
+          <h3 style="margin-bottom:12px">Instant Swap</h3>
+          <p style="margin-bottom:18px">Visitors can swap directly, or use the official website first and then continue to the live route.</p>
 
-    <details>
-      <summary>Is there a presale?</summary>
-      <p>Yes — Public presale on PinkSale (TBA). Follow our Telegram & X for the exact time.</p>
-    </details>
-  </div>
-</section>
+          <div class="embed" style="border-radius:18px;margin-bottom:16px">
+            <iframe
+              title="DEXTswap Aggregator"
+              height="420"
+              src="https://www.dextools.io/widget-aggregator/en/swap/bnb/0xfd73ccf13f1daafb807fadf03cef21ef06ac8f63">
+            </iframe>
+          </div>
 
-<!-- Footer -->
-<footer>
-  <div class="container">
-    <div class="foot-links">
-      <a class="badge" href="https://t.me/BNKX_Community" target="_blank">Telegram</a>
-      <a class="badge" href="https://x.com/BNKX_Official" target="_blank">X (Twitter)</a>
-      <a class="badge" href="mailto:info@bnkx.net">info@bnkx.net</a>
-      <a class="badge" href="https://bnkx.net/Whitepaper.pdf" target="_blank">Whitepaper (PDF)</a>
+          <a class="btn btn--gold btn--block" href="https://bnkx.net" target="_blank" rel="noopener">Open Official Website</a>
+          <div class="chip-row">
+            <a class="chip" href="https://pancakeswap.finance/swap?outputCurrency=0xfd73cCF13F1DAaFb807FAdf03Cef21ef06aC8f63&chain=bsc" target="_blank" rel="noopener">PancakeSwap</a>
+            <a class="chip" href="https://www.dextools.io/app/en/bnb/pair-explorer/0x7b5c735f56377036f1da2be914b1438728de7ca9" target="_blank" rel="noopener">Pair Explorer</a>
+          </div>
+        </div>
+      </div>
     </div>
-    <p style="text-align:center;margin:16px 0 0;color:#8e8e8e">
-      BNKX is a community-driven token for experimental and educational purposes. Not financial advice. DYOR.
-    </p>
-  </div>
-</footer>
+  </section>
 
-<script>
-  // Copy contract chip
-  const fullAddr = '0xfd73cCF13F1DAaFb807FAdf03Cef21ef06aC8f63';
-  document.getElementById('addrChip').addEventListener('click', async () => {
-    try{
-      await navigator.clipboard.writeText(fullAddr);
-      const el = document.getElementById('addrChip');
-      el.textContent='Copied!';
-      setTimeout(()=>el.textContent='0xfd73c...c8f63',1200);
-    }catch(e){ alert(fullAddr); }
-  });
-</script>
+  <section id="tokenomics">
+    <div class="container">
+      <div class="section-head">
+        <h2>Token Information</h2>
+        <p>
+          I simplified this section so it reads faster and looks more premium. If you want, we can later adjust the actual percentages once you finalize the relaunch setup.
+        </p>
+      </div>
 
+      <div class="grid-3">
+        <div class="card tok-card">
+          <h3>Total Supply</h3>
+          <span class="value">600,000,000</span>
+          <div class="subv">BNKX total supply</div>
+        </div>
+
+        <div class="card tok-card">
+          <h3>Presale Allocation</h3>
+          <span class="value">300,000,000</span>
+          <div class="subv">50% reserved for presale setup</div>
+        </div>
+
+        <div class="card tok-card">
+          <h3>Liquidity Allocation</h3>
+          <span class="value">180,000,000</span>
+          <div class="subv">30% reserved for liquidity with 90-day lock</div>
+        </div>
+
+        <div class="card tok-card">
+          <h3>Marketing</h3>
+          <span class="value">40,000,000</span>
+          <div class="subv">Community growth and visibility</div>
+        </div>
+
+        <div class="card tok-card">
+          <h3>Development</h3>
+          <span class="value">40,000,000</span>
+          <div class="subv">Product, website, and ecosystem work</div>
+        </div>
+
+        <div class="card tok-card">
+          <h3>Team & Reserves</h3>
+          <span class="value">40,000,000</span>
+          <div class="subv">Strategic allocation and reserves</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="roadmap">
+    <div class="container">
+      <div class="section-head">
+        <h2>Roadmap</h2>
+        <p>
+          I kept your roadmap structure but presented it in a cleaner timeline so the site looks more serious and easier to scan.
+        </p>
+      </div>
+
+      <div class="timeline">
+        <div class="phase">
+          <b>Q2 2025</b>
+          <p>Brand identity, website launch, contract deployment, and verification.</p>
+        </div>
+        <div class="phase">
+          <b>Q3–Q4 2025</b>
+          <p>Community positioning, PinkSale preparation, audience rebuilding, and partner outreach.</p>
+        </div>
+        <div class="phase">
+          <b>Q4 2025 – Q1 2026</b>
+          <p>Liquidity, live trading visibility, long-term expansion, and ecosystem growth.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq" class="faq">
+    <div class="container">
+      <div class="section-head">
+        <h2>FAQ</h2>
+        <p>
+          These answers are short on purpose so users do not get buried in text.
+        </p>
+      </div>
+
+      <details>
+        <summary>What is BNKX?</summary>
+        <p>BNKX is a BNB Smart Chain token built around community visibility, simple access, and a cleaner official brand presence.</p>
+      </details>
+
+      <details>
+        <summary>Where should I find the official links?</summary>
+        <p>Use the BNKX website as the main source for official pages, official socials, and live trading access.</p>
+      </details>
+
+      <details>
+        <summary>How do I trade BNKX?</summary>
+        <p>Go through the official website, then continue to PancakeSwap or the live swap route using the verified BNKX contract.</p>
+      </details>
+
+      <details>
+        <summary>Is there a presale?</summary>
+        <p>PinkSale remains part of the BNKX plan. Timing and relaunch details can be updated here once finalized.</p>
+      </details>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="cta-band">
+        <div>
+          <h3>Keep all traffic on the official path.</h3>
+          <p>
+            Use the website as the front door, X for updates and direct messages, and the live section for verified trading access.
+          </p>
+        </div>
+        <div style="display:flex;gap:10px;flex-wrap:wrap">
+          <a class="btn btn--gold" href="https://bnkx.net" target="_blank" rel="noopener">Official Website</a>
+          <a class="btn" href="https://x.com/BNKX_Official" target="_blank" rel="noopener">Follow on X</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="brand">
+            <img src="https://bnkx.net/logo-32.svg" alt="BNKX Logo" />
+            <span>BNKX</span>
+          </div>
+          <p class="foot-note">
+            Official BNKX website layout focused on trust, clarity, and verified navigation.
+            Not financial advice. Always do your own research.
+          </p>
+        </div>
+
+        <div class="footer-links">
+          <a class="foot-badge" href="https://bnkx.net" target="_blank" rel="noopener">Website</a>
+          <a class="foot-badge" href="https://x.com/BNKX_Official" target="_blank" rel="noopener">X</a>
+          <a class="foot-badge" href="https://t.me/bnkx_channel" target="_blank" rel="noopener">Channel</a>
+          <a class="foot-badge" href="https://t.me/BNKX_Community" target="_blank" rel="noopener">Community</a>
+          <a class="foot-badge" href="https://bnkx.net/Whitepaper.pdf" target="_blank" rel="noopener">Whitepaper</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function toggleMenu(){
+      document.getElementById('navWrap').classList.toggle('open');
+    }
+
+    async function copyContract(){
+      const text='0xfd73cCF13F1DAaFb807FAdf03Cef21ef06aC8f63';
+      try{
+        await navigator.clipboard.writeText(text);
+        const btn = event.target;
+        const original = btn.textContent;
+        btn.textContent = 'Copied';
+        setTimeout(()=> btn.textContent = original, 1200);
+      }catch(e){
+        alert(text);
+      }
+    }
+  </script>
 </body>
 </html>
