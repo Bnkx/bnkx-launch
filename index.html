@@ -162,6 +162,32 @@
       background:#0d0d0d;border:1px solid var(--line);color:#ddd;font-weight:700;font-size:14px;
     }
 
+    /* visitor counter */
+    .visitor-counter-wrap{
+      text-align:center;
+      margin-top:24px;
+      margin-bottom:6px;
+    }
+    .visitor-counter{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      padding:14px 24px;
+      border-radius:999px;
+      border:1px solid rgba(212,175,55,.35);
+      background:rgba(212,175,55,.08);
+      color:var(--gold-2);
+      font-weight:800;
+      font-size:16px;
+      box-shadow:0 8px 24px rgba(212,175,55,.15);
+    }
+    .visitor-counter span{
+      color:#fff;
+      font-weight:900;
+      letter-spacing:.3px;
+    }
+
     /* trust strip */
     .trust-strip{padding:16px 0 0}
     .stats{
@@ -303,6 +329,7 @@
       .section-head{flex-direction:column;align-items:flex-start}
       .cta-band h3{font-size:24px}
       .contract-box{flex-direction:column;align-items:flex-start}
+      .visitor-counter{font-size:15px;padding:12px 18px}
     }
   </style>
 </head>
@@ -366,7 +393,7 @@
 
         <div class="contract-box">
           <span id="contractText">0xfd73cCF13F1DAaFb807FAdf03Cef21ef06aC8f63</span>
-          <button class="btn btn--ghost" type="button" onclick="copyContract()">Copy</button>
+          <button class="btn btn--ghost" type="button" onclick="copyContract(event)">Copy</button>
         </div>
 
         <div class="chip-row">
@@ -375,6 +402,13 @@
           <a class="chip" href="https://coinsniper.net/coin/86662" target="_blank" rel="noopener">CoinSniper</a>
         </div>
       </aside>
+    </div>
+
+    <div class="container visitor-counter-wrap">
+      <div class="visitor-counter">
+        🚀 Early BNKX Visitors:
+        <span id="bnkx-count">Loading...</span>
+      </div>
     </div>
 
     <div class="container trust-strip">
@@ -391,9 +425,7 @@
     <div class="container">
       <div class="section-head">
         <h2>Official Links</h2>
-        <p>
-          
-        </p>
+        <p></p>
       </div>
 
       <div class="official">
@@ -440,8 +472,6 @@
             </a>
           </div>
         </div>
-
-        
       </div>
     </div>
   </section>
@@ -450,9 +480,7 @@
     <div class="container">
       <div class="section-head">
         <h2>How to Buy BNKX</h2>
-        <p>
-          
-        </p>
+        <p></p>
       </div>
 
       <div class="grid-3">
@@ -481,9 +509,7 @@
     <div class="container">
       <div class="section-head">
         <h2>Live Trading</h2>
-        <p>
-          
-        </p>
+        <p></p>
       </div>
 
       <div class="live-grid">
@@ -521,9 +547,7 @@
     <div class="container">
       <div class="section-head">
         <h2>Token Information</h2>
-        <p>
-          
-        </p>
+        <p></p>
       </div>
 
       <div class="grid-3">
@@ -570,9 +594,7 @@
     <div class="container">
       <div class="section-head">
         <h2>Roadmap</h2>
-        <p>
-          
-        </p>
+        <p></p>
       </div>
 
       <div class="timeline">
@@ -596,9 +618,7 @@
     <div class="container">
       <div class="section-head">
         <h2>FAQ</h2>
-        <p>
-          
-        </p>
+        <p></p>
       </div>
 
       <details>
@@ -670,18 +690,27 @@
       document.getElementById('navWrap').classList.toggle('open');
     }
 
-    async function copyContract(){
-      const text='0xfd73cCF13F1DAaFb807FAdf03Cef21ef06aC8f63';
+    async function copyContract(e){
+      const text = '0xfd73cCF13F1DAaFb807FAdf03Cef21ef06aC8f63';
       try{
         await navigator.clipboard.writeText(text);
-        const btn = event.target;
+        const btn = e.target;
         const original = btn.textContent;
         btn.textContent = 'Copied';
-        setTimeout(()=> btn.textContent = original, 1200);
-      }catch(e){
+        setTimeout(() => btn.textContent = original, 1200);
+      }catch(err){
         alert(text);
       }
     }
+
+    fetch('https://api.counterapi.dev/v1/bnkx/visits/up')
+      .then(res => res.json())
+      .then(data => {
+        document.getElementById('bnkx-count').textContent = data.count;
+      })
+      .catch(() => {
+        document.getElementById('bnkx-count').textContent = 'N/A';
+      });
   </script>
 </body>
 </html>
